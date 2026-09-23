@@ -1,59 +1,789 @@
-<!DOCTYPE html><html dir="ltr" lang="tr-TR" class="x-default-marker theme light classic x6brqfx x1yowkxt x19aimcq"><head><base href="/bilfen-eitim-uygulamas/"><meta charset="utf-8"><title>Bilfen Eğitim Uygulaması</title><meta name="app-name" content="export_website"/><meta name="build-version" content="aff5189c1fc76376d0855e1f715263f6edfc262f"/><meta name="build-release-name" content="20260908-23-aff5189"/><meta name="build-deployment-group" content="STABLE"/><meta name="viewport" content="width=device-width, initial-scale=1"><script nonce="63aca029-31ed-43fa-ad34-4a25572b190e">(function pushPageBuildIdentityToNativeShell(identity) {
-  if (typeof window === 'undefined') {
-    return;
-  }
-  if (Object.values(identity).every(value => value == null)) {
-    return;
-  }
-  const json = JSON.stringify(identity);
-  if (window.Android?.onPageBuildIdentityReady) {
-    // Android-shaped device
-    window.Android.onPageBuildIdentityReady(json);
-  } else if (window.Harmony?.onPageBuildIdentityReady) {
-    // HarmonyOS-shaped device
-    window.Harmony.onPageBuildIdentityReady(json);
-  } else if (window.webkit?.messageHandlers?.pageBuildIdentityReady) {
-    // iOS-shaped device
-    window.webkit.messageHandlers.pageBuildIdentityReady.postMessage(json);
-  } else if (window.ElectronBridge?.onPageBuildIdentityReady) {
-    // Canva desktop app
-    window.ElectronBridge.onPageBuildIdentityReady(json);
-  } else {
-    // No native platform detected. Nothing to notify.
-  }
-})({stack: 'export_website', variant:  null , version: 'aff5189c1fc76376d0855e1f715263f6edfc262f', releaseName: '20260908-23-aff5189', deploymentGroup: 'STABLE'});</script><link href="assets/e90408a0e60d7348.ltr.css" rel="stylesheet" integrity="sha512-0vBPY7Q9Y5Lj1KbE0B7KtE1tLaDe7d1dlKKK1xR88I8iUC1Lg45xcJGoDjhy7NGsKao1jJL8stC7aQ4VKhR59A==" crossorigin="anonymous"><link href="assets/static_font_4.ltr.css" rel="stylesheet"><link href="assets/d56f86fa1b9a6b61.runtime.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-wBDe2poBovNi30fzJ/y9wKe79uWP35I5JFVU+MtJeIv2akaNEYHosjoTGn5nPKcwziLVkCs6gTqwp7OjDhe9Gw==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"><link href="assets/e6d9690df7022fb8.s4le6a.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-CKTxAr+UOPx/MOoLT6ihX3xz5G6jP2q86jBMqT60c6kT+RnlKpA2RqUTjFa43m3XjRKkVQ3yGAwtSjfbxN0v2Q==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"><link href="assets/f34af0df47ca8d73.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-/w9eIRmtk5WMHehLrl/IwIblDfUfH+kaflDbacmi0B1SBUf+ghXVX7ROgcaYOswg/8FpAl1UazGWBZ89y8rHlA==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"><link href="assets/8cddb0b79368fba5.strings.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-ljk15lpbiK77ivkvyj0AzFDAHGAxM8fnp9xZyzYj20b88RmouQKQSaHO4f4XWk/FhXtYjHXgP43AxtAIzIvMuw==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"><link href="assets/3779548894a10fa5.tr-TR.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-6q6mEjRlakHoWJZdRF09PztlIVltaJapRHeDMxnZnSxHY5nKN8ddV/bxFpd6pdZLPjbr3hbmUGrr6pVaSGKt1w==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"><link href="assets/723cc1ad9f9ff181.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-Ib1Vrc4KHz5MX+8y1WImr6z0vxhAfV/yVuU7JFtOLellh/UBWh9aRI7J8Yo0+fqzawuBlQaQfy/O5LVatan4mA==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"><meta name="referrer" content="strict-origin-when-cross-origin"><meta property="og:title" content="Bilfen Eğitim Uygulaması"><meta property="og:type" content="website"><link rel="shortcut icon" href="assets/images/2d0b56e7e51cf11036ad8734bdb67e2d.png"><link rel="icon" href="assets/images/e53c4bd8da5e491d9ab09e7cf0daf874.png" sizes="192x192"><link rel="apple-touch-icon" href="assets/images/725b756a69a7d4c235070e51acd85560.png" sizes="180x180"><script nonce="63aca029-31ed-43fa-ad34-4a25572b190e">window['__canva_website_bootstrap__'] = JSON.parse('{"A":"ASSISTANT_THREAD_CODELET#9e7546e4-897e-4a5c-81f7-c4ef52c978b3","B":"eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwia2lkIjoia2lkLTE3Nzg0NzAzNjEzOTQifQ..lIoATLHofBEUSKK_.40oA_5GJDq6FXi-1t09GaXmE2kwcIXQcJo_ltCkyACZJCier5rWwL-7jZUkMedoXsMBnKw1S4vhDHmX5kyCGBBjPhTXOOSPfxaNd2EiEdVIcamVfkuU3yw1KuBrSvzBMYRXsUjmaxW0W.RSe33-LRAocxrTo24AidyA"}');</script><script nonce="63aca029-31ed-43fa-ad34-4a25572b190e">
-      document.addEventListener('contextmenu', (e) => {
-        const isMedia = ['img', 'image', 'video', 'svg', 'picture'].some(
-          tagName => tagName.localeCompare(e.target.tagName, undefined, { sensitivity: 'base' }) === 0,
-        );
-        isMedia && e.preventDefault();
-      });
-    </script><script nonce="63aca029-31ed-43fa-ad34-4a25572b190e">
-  const lang = navigator.language ? navigator.language : 'en';
-  window.canva_installFooter = (container) => {
-    if (!(container instanceof HTMLDivElement)) {
-      return;
-    }
-    fetch('_footer?lang=' + encodeURIComponent(lang)).then(response => {
-      if (response.status !== 200) {
-        return;
-      }
-      response.text().then(footerStr => {
-        container.innerHTML = '';
-        const div = document.createElement('div');
-        div.innerHTML = footerStr;
-        for (const child of [...div.children]) {
-          if (child.tagName.toLowerCase() !== 'script') {
-            container.append(child);
-          }
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilfen Eğitim Uygulaması</title>
+<script src="https://cj6n7jabrs751xnm.canvacode.com/codelet/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..pnj8N83bMxezInTV.J8EGOWrg2CbLatSZ6JrA1KG8NeyPXHAZ25zw08JiuBU5teX68B40w1NRWXZERIlafixQoP2u954hCKwlctXBPuL71a0gqErN7DUoFV7OxdL2HM91az60KDFXOggECt2JoxE4wCMp_cuPDlt979mjV0q7vvrt2Q2WDM29bKXyluuNpCNCdgwb4qyQEWozpClSLUxRqwhozNRS7sIdVwf4-diV7LOSFMfJ0qaI_45Tn30157ZGL_RsDK0izkiqPzHPZkpsAU1feaXzxcdnRvYmvsU94o17suT3EIR04ibteB7OWcFLLYNzE5PAj_tH68IrzxV8d73yJraXlaWXg3Q141QTe48HRkvIvtH_DRweCuOLehkY0wLC_yQTasqW4RVu1w11fVHEgjZIu8IWE5qjSXrEF3ZyyM0J5TzHwJT2u0E_yov9BqGHa2vAEAvM2EiVRhgLjM2ZWJ69wlsGgQHMtIqbe7Uk10XDslQH0XhPhtdFqukMsubI86T-EDOgPwFxIpVBuaedsIOJJatwlrRVdGLhDK0tu9M0xZcu5LbYU7wUVwrelxeBmLXZv25KX3YiCGfeEUSqUNXPIMjGmbo7fUNh9uPSyPh2nFmn.UcoghW6Xk_A4HFxR8AHchQ/telemetry_sdk.js?pin_id=f9cf68852de5958ef118b68426dcd68d"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatarım Harezmi ile Konuşuyor - Bilfen Eğitim</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Quicksand:wght@500;600;700&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+        * {
+            font-family: 'Fredoka', 'Quicksand', sans-serif;
+            user-select: none;
         }
 
-        (() => { !function(){"use strict";const t={active:"active"},o={modalBackdrop:"modal_backdrop",termsAndConditionsModal:"modal",termsAndConditionsModalCloseButton:"form_close_initial",reportButton:"form_report",privacyPolicyModal:"privacy_policy_modal",privacyPolicyModalCloseButton:"form_close_privacy_policy",termsAndSupportFooterButton:"report_button",privacyPolicyFooterButton:"privacy_policy_button"};!function(){const c=document.getElementById(o.modalBackdrop);null!=c&&(function(c){const e=document.getElementById(o.termsAndConditionsModal),n=document.getElementById(o.termsAndConditionsModalCloseButton),l=document.getElementById(o.reportButton),i=document.getElementById(o.termsAndSupportFooterButton);if(null==e||null==n||null==l||null==i)return;l.onclick=()=>{const{origin:t,pathname:o}=window.location,c=t+o,e=l.dataset.reportUrl+encodeURIComponent(c);window.open(e)};const s=()=>{c.classList.remove(t.active),e.classList.remove(t.active),i.classList.remove(t.active),i.focus(),c.onclick=null};n.onclick=s,i.onclick=()=>{c.classList.add(t.active),c.onclick=s,e.classList.add(t.active),i.classList.add(t.active)}}(c),function(c){const e=document.getElementById(o.privacyPolicyModal),n=document.getElementById(o.privacyPolicyModalCloseButton),l=document.getElementById(o.privacyPolicyFooterButton);if(null==e||null==n||null==l)return;const i=()=>{c.classList.remove(t.active),e.classList.remove(t.active),l.classList.remove(t.active),l.focus(),c.onclick=null};n.onclick=i,l.onclick=()=>{c.classList.add(t.active),c.onclick=i,e.classList.add(t.active),l.classList.add(t.active)}}(c))}()}(); })();
-      });
-    });
-  }
-</script><script nonce="63aca029-31ed-43fa-ad34-4a25572b190e">
-    window.C_CAPTCHA_IMPLEMENTATION = 'RECAPTCHA';
-</script><script nonce="63aca029-31ed-43fa-ad34-4a25572b190e">
-    window.C_CAPTCHA_KEY = '6LdpNmIrAAAAAHQVezN3pBAfDjQQ2qUpo881f24o';
-</script></head><body><script nonce="63aca029-31ed-43fa-ad34-4a25572b190e">(function () {var classList = document.documentElement.classList;if (classList.contains('adaptive') && window.matchMedia('(prefers-color-scheme: dark)').matches) {classList.remove.apply(classList, ["x6brqfx","x1yowkxt","x19aimcq"]);classList.add.apply(classList, ["xo86nag","x1yowkxt","xntwwlm"]);}document.documentElement.classList.replace('adaptive', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');})();</script><div id="root"></div><script nonce="63aca029-31ed-43fa-ad34-4a25572b190e">(function() {window['__canva_public_path__'] = 'assets\/'; window['bootstrap'] = JSON.parse('{"base":{"A?":"B","L":false,"N":false,"E":"aff5189c1fc76376d0855e1f715263f6edfc262f","j":"1811055","K":1788961554,"F":{"A?":"B"},"G":"CLIENT_FULL","I":"A","O":{"A?":"B"},"M":"/_online","U":[],"V":[],"a":{"K":"export_website","H":{}},"d":{"A":"wss://www.canva.com/_stream","B":{"F":"export_website"},"C":8388608},"b":{"A?":"H","C":{"a":"WEB"},"D":{"a":"WEB","c":"tr-TR"},"E":{},"P":[],"Q":[],"R":false,"S":false}},"page":{"A":{"B":{"A?":"B","A":1366.0,"B":768.0,"C":"D"},"C":{"A":1366.0,"B":768.0,"C":"D"},"Q":[],"R":[],"P":"tr-TR","D":"Bilfen Eğitim Uygulaması","F":[],"d":{},"G":{},"Y":{},"a":[],"b":[],"V":[],"W":[],"A":[{"A?":"i","a":"PBHCGL1BmmZJ2Yfq","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"w":{"A":[{"C":"#ffffff","D":0.0,"F":false,"J":false,"G":false,"H":false}],"B":[]},"r":[],"E":[{"A?":"BC","A":0.0,"B":0.0,"D":1366.0,"C":768.0,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"_":"LBJgRvk3nt6VzZJF","b":1366.0,"a":768.0,"z":{"A":{"A":"w:KS5H9iEEh","B":1},"B":{}},"y":{"A":{"A?":"O","A":{"A":{"A?":"S","A":{"A":"https://canva-hosted-embed.com/codelet/DP_985cc44d1303421d87cffa5df6636100/cj6n7jabrs751xnm","B":0,"C":"F"}},"B":{"A?":"O","A":{"__page-root":{"A?":"O","A":{"E":{"A?":"P","A":{"K":{"A?":"A","A":[{"A":"#0f172a","B":0.0,"C":0.0},{"A":"#00205b","B":0.0,"C":0.5},{"A":"#1e293b","B":0.0,"C":1.0}],"B":135.0},"D":0.0,"F":false,"J":false,"G":false,"H":false}}}},"app-subtitle":{"A?":"O","A":{"A":{"A?":"A","A":"Bilfen Algoritma & Yapay Zeka Öğrenme Platformu 🚀"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#2563eb","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"semibold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":14.0}}},"app-title":{"A?":"O","A":{"A":{"A?":"A","A":"Avatarım Harezmi ile Konuşuyor"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YACgEZml080","B":0,"C":"B"}}}}}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":28.0}}},"bilfen-logo":{"A?":"O","A":{"I":{"A?":"O","A":{"k":{"A?":"D","A":3},"v":{"A?":"O","A":{"A":{"A?":"D","A":3},"B":{"A?":"P","A":{"B":{"A":{"A?":"d","A":"MAHUm0gDcUI","B":1},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false}}}}}},"J":{"A?":"A","A":"Bilfen logosu"}}},"chat-avatar-badge":{"A?":"O","A":{"A":{"A?":"A","A":"Bilfen Öğrencisi 🎓"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#1d4ed8","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":12.0}}},"chat-avatar-label":{"A?":"O","A":{"A":{"A?":"A","A":"Senin Avatarın"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#172554","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":18.0}}},"chat-notification":{"A?":"O","A":{"A":{"A?":"A","A":"💌 Harezmi\'den mesajın var!"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#78350f","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":12.0}}},"chat-panel":{"A?":"O","A":{"E":{"A?":"P","A":{"C":"#ffffff","D":0.050000000000000044,"F":false,"J":false,"G":false,"H":false}}}},"chat-title":{"A?":"O","A":{"A":{"A?":"A","A":"Harezmi ile Sohbet Akışı"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#172554","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":18.0}}},"footer-robi-img":{"A?":"O","A":{"I":{"A?":"O","A":{"k":{"A?":"D","A":3},"v":{"A?":"O","A":{"A":{"A?":"D","A":3},"B":{"A?":"P","A":{"B":{"A":{"A?":"d","A":"MAHUmzqlZYk","B":1},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false}}}}}},"J":{"A?":"A","A":"Bilfen AI robotu"}}},"harezmi-badge":{"A?":"O","A":{"A":{"A?":"A","A":"Matematikçi & Bilim İnsanı 📐"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#92400e","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":12.0}}},"harezmi-chat-thumb":{"A?":"O","A":{"I":{"A?":"O","A":{"k":{"A?":"D","A":3},"v":{"A?":"O","A":{"A":{"A?":"D","A":3},"B":{"A?":"P","A":{"B":{"A":{"A?":"d","A":"MAHUmy9Wanw","B":1},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false}}}}}},"J":{"A?":"A","A":"Harezmi portresi"}}},"harezmi-greeting":{"A?":"O","A":{"A":{"A?":"A","A":"Merhaba sevgili öğrencim! Ben Harezmi. Tasarladığın harika avatarınla seni gördüğüme çok sevindim! Bana ne sormak istersin?"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#1e293b","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"semibold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":16.0}}},"harezmi-name":{"A?":"O","A":{"A":{"A?":"A","A":"Harezmi"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#451a03","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":18.0}}},"harezmi-portrait":{"A?":"O","A":{"I":{"A?":"O","A":{"k":{"A?":"D","A":3},"v":{"A?":"O","A":{"A":{"A?":"D","A":3},"B":{"A?":"P","A":{"B":{"A":{"A?":"d","A":"MAHUmy9Wanw","B":1},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false}}}}}},"J":{"A?":"A","A":"Harezmi portresi"}}},"header-bar":{"A?":"O","A":{"E":{"A?":"P","A":{"C":"#ffffff","D":0.050000000000000044,"F":false,"J":false,"G":false,"H":false}}}},"header-robi-desc":{"A?":"O","A":{"A":{"A?":"A","A":"Sana yardımcı olmaya hazır!"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#2563eb","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"normal"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":10.0}}},"header-robi-img":{"A?":"O","A":{"I":{"A?":"O","A":{"k":{"A?":"D","A":3},"v":{"A?":"O","A":{"A":{"A?":"D","A":3},"B":{"A?":"P","A":{"B":{"A":{"A?":"d","A":"MAHUmzqlZYk","B":1},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false}}}}}},"J":{"A?":"A","A":"Bilfen AI robotu"}}},"header-robi-name":{"A?":"O","A":{"A":{"A?":"A","A":"Rehberin Robi"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#1e3a5f","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":12.0}}},"input-hint":{"A?":"O","A":{"A":{"A?":"A","A":"Aşağıdaki sorulardan birini seçebilir veya kendin yazabilirsin!"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#64748b","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"normal"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":12.0}}},"input-label":{"A?":"O","A":{"F":{"A?":"P","A":{"C":"#172554","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"}}},"input-label-text":{"A?":"O","A":{"A":{"A?":"A","A":"Harezmi\'ye Mesajın veya Sorun:"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#172554","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":16.0}}},"message-input":{"A?":"O","A":{"A":{"A?":"A","A":"Mesajını buraya yaz... (Örn: Merhaba Harezmi, bana matematiği nasıl keşfettiğini anlatır mısın?)"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"G":{"A?":"A","A":"normal"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":16.0}}},"quick-q1":{"A?":"O","A":{"A":{"A?":"A","A":"👋 Merhaba Harezmi"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#1e3a5f","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":16.0}}},"quick-q2":{"A?":"O","A":{"A":{"A?":"A","A":"💡 Algoritma nedir?"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#1e3a5f","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":16.0}}},"quick-q3":{"A?":"O","A":{"A":{"A?":"A","A":"🔢 Sıfır (0) sayısı nedir?"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#1e3a5f","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":16.0}}},"quick-q4":{"A?":"O","A":{"A":{"A?":"A","A":"🙏 Teşekkür ederim"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#1e3a5f","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":16.0}}},"quick-q5":{"A?":"O","A":{"A":{"A?":"A","A":"❤️ Seni çok seviyorum"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#1e3a5f","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":16.0}}},"reset-button":{"A?":"O","A":{"E":{"A?":"P","A":{"C":"#f1f5f9","D":0.0,"F":false,"J":false,"G":false,"H":false}},"F":{"A?":"P","A":{"C":"#334155","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"}}},"robi-footer-text":{"A?":"O","A":{"A":{"A?":"A","A":"Harika! Harezmi ile iletişim kurdun. Algoritma yolculuğunu tamamladın! 🚀"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#475569","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"normal"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":14.0}}},"robi-footer-title":{"A?":"O","A":{"A":{"A?":"A","A":"Robi Rehberin Diyor Ki:"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#172554","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":14.0}}},"send-button":{"A?":"O","A":{"E":{"A?":"P","A":{"K":{"A?":"A","A":[{"A":"#ffc700","B":0.0,"C":0.0},{"A":"#ff9900","B":0.0,"C":1.0}],"B":135.0},"D":0.0,"F":false,"J":false,"G":false,"H":false}},"F":{"A?":"P","A":{"C":"#00205b","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"ultrabold"}}},"start-button":{"A?":"O","A":{"E":{"A?":"P","A":{"K":{"A?":"A","A":[{"A":"#ffc700","B":0.0,"C":0.0},{"A":"#ff9900","B":0.0,"C":1.0}],"B":135.0},"D":0.0,"F":false,"J":false,"G":false,"H":false}},"F":{"A?":"P","A":{"C":"#00205b","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"bold"},"K":{"A?":"C","A":20.0}}},"start-description":{"A?":"O","A":{"A":{"A?":"A","A":"Ben Robi! Bugün birlikte kendi özel dijital avatarını tasarlayacağız ve tarihteki büyük matematikçi Harezmi ile sohbet edeceğiz."},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YAGXhLOKv44","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#475569","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"normal"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":18.0}}},"start-heading":{"A?":"O","A":{"A":{"A?":"A","A":"Hoş Geldin Sevgili Öğrencimiz! 👋"},"D":{"A?":"O","A":{"k":{"A?":"D","A":2},"v":{"A?":"O","A":{"A":{"A?":"D","A":2},"B":{"A?":"S","A":{"A":"YACgEZml080","B":0,"C":"B"}}}}}},"F":{"A?":"P","A":{"C":"#172554","D":0.0,"F":false,"J":false,"G":false,"H":false}},"G":{"A?":"A","A":"ultrabold"},"H":{"A?":"A","A":"normal"},"K":{"A?":"C","A":32.0}}},"start-robi-img":{"A?":"O","A":{"I":{"A?":"O","A":{"k":{"A?":"D","A":3},"v":{"A?":"O","A":{"A":{"A?":"D","A":3},"B":{"A?":"P","A":{"B":{"A":{"A?":"d","A":"MAHUmzqlZYk","B":1},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false}}}}}},"J":{"A?":"A","A":"Bilfen AI robotu"}}}}}}}},"BH":{}}],"I":[]}],"I":[]},"Z":{"A?":"E","M":"tr-TR","e":false,"g":[{"A?":"A","K":"PBHCGL1BmmZJ2Yfq","L":"","O":"Bilfen Eğitim Uygulaması","e":{"A":true}}]},"I":{"A":[{"A":"YACgEZ1cb1Q","B":0,"C":"Arimo","D":[{"style":"ITALICS","files":[{"url":"assets/fonts/711f50b3a8c00bb7e2e05ef85f982cb6.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":240584}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2077},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-425,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":1}}},{"style":"BOLD_ITALICS","files":[{"url":"assets/fonts/0803f40e19a074a5520c2746a6ba3c95.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":237588}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2109},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":33}}},{"style":"REGULAR","files":[{"url":"assets/fonts/834f64ff415fb8f4f5d92d8fd40507e9.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234332}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2007},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":64}}},{"style":"BOLD","files":[{"url":"assets/fonts/b07201e0e9fc452103c1c0345b0e7c1d.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234660}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2116},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":32}}}],"E":false},{"A":"YAGXhLOKv44","B":0,"C":"Work Sans","D":[{"style":"MEDIUM_ITALICS","files":[{"url":"assets/fonts/b978739a2d52f662ddfd60cb514adfe0.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84472}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-297,"yMax":1098},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"HEAVY","files":[{"url":"assets/fonts/8e6f3a7f33ab649dfb9e798f5140520c.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":79288}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-343,"yMax":1105},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"BOLD","files":[{"url":"assets/fonts/2bfb8cb3236e155f8f767943a394f9f0.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":89292}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-341,"yMax":1098},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":160}}},{"style":"MEDIUM","files":[{"url":"assets/fonts/73679fc63f872f1fa52e12f8efabae25.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":88456}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-338,"yMax":1098},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"ITALICS","files":[{"url":"assets/fonts/69bc6d9b6cff53e9c6fa060b1e653aaa.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":79608}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-292,"yMax":1100},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"EXTRA_LIGHT_ITALICS","files":[{"url":"assets/fonts/ff1dbe03c4f008a0d8a0f79e48034590.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":85104}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-270,"yMax":1059},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"EXTRA_LIGHT","files":[{"url":"assets/fonts/971853cd18d94efadc1952102897af1a.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":88472}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-330,"yMax":1059},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"REGULAR","files":[{"url":"assets/fonts/56c832532c112d859b636342b9e4601a.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":83704}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-337,"yMax":1100},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"LIGHT_ITALICS","files":[{"url":"assets/fonts/e764193e4b73869f9bfde1deb0c51bd7.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84508}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-279,"yMax":1077},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"ULTRA_BOLD","files":[{"url":"assets/fonts/8c8dc6c789a84d42f2aac7b880f7b4a5.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":88784}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-342,"yMax":1102},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"ULTRA_BOLD_ITALICS","files":[{"url":"assets/fonts/a16169c95d8b89b72f3b3692f77bdb03.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":83904}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-316,"yMax":1102},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"THIN_ITALICS","files":[{"url":"assets/fonts/4d02e7a4e296cdc49bffbe05670aabbd.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":81568}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-269,"yMax":1050},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"HEAVY_ITALICS","files":[{"url":"assets/fonts/ec835b1f26f94a748c319055a3f48bd6.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":75308}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-322,"yMax":1105},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"THIN","files":[{"url":"assets/fonts/d8abfbabea43cda6ed9116206af43079.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84708}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-329,"yMax":1050},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"SEMI_BOLD_ITALICS","files":[{"url":"assets/fonts/0428785bebd6faa87405edbefdbcc917.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84908}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-303,"yMax":1095},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"BOLD_ITALICS","files":[{"url":"assets/fonts/da9d3fb672f67e689f5f834e77ab2abe.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84732}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-310,"yMax":1098},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":161}}},{"style":"SEMI_BOLD","files":[{"url":"assets/fonts/4ff68830e2850588f4cf1e759da18c76.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":89292}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-339,"yMax":1095},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"LIGHT","files":[{"url":"assets/fonts/00c9819b4a06727bed58ca4594ebfec6.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":88412}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-333,"yMax":1077},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}}],"E":false},{"A":"YACgEZml080","B":0,"C":"Fredoka","D":[{"style":"REGULAR","files":[{"url":"assets/fonts/fff1e3916422907a51ddd3749fd3d589.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":21724}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-236,"yMax":974},"hhea":{"ascender":974,"descender":-236,"lineGap":0},"os2":{"sTypoAscender":974,"sTypoDescender":-236,"sTypoLineGap":0,"usWinAscent":974,"usWinDescent":236,"fsSelection":64}}}],"E":false}],"B":[{"type":"RASTER","id":"MAHUmzqlZYk","version":1,"files":[{"url":"assets/media/4fc9f7a604fa3d32f0b75434d7a94be2.png","urlDenied":false,"width":800,"height":533,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUmzqlZYk","version":1,"files":[{"url":"assets/media/522769a80d0438ea6461c6e0f5fa6d67.png","urlDenied":false,"width":1536,"height":1024,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUmzqlZYk","version":1,"files":[{"url":"assets/media/522769a80d0438ea6461c6e0f5fa6d67.png","urlDenied":false,"width":1536,"height":1024,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUm0gDcUI","version":1,"files":[{"url":"assets/media/3a7a39b88696326d306b514f298d01e9.png","urlDenied":false,"width":800,"height":800,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUm0gDcUI","version":1,"files":[{"url":"assets/media/5132cfe00997135d75c456c819a1e9f5.png","urlDenied":false,"width":1181,"height":1181,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUm0gDcUI","version":1,"files":[{"url":"assets/media/5132cfe00997135d75c456c819a1e9f5.png","urlDenied":false,"width":1181,"height":1181,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUmy9Wanw","version":1,"files":[{"url":"assets/media/dbd625c28bac3f5a82eda54f7508d25a.jpg","urlDenied":false,"width":300,"height":300,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAHUmy9Wanw","version":1,"files":[{"url":"assets/media/dbd625c28bac3f5a82eda54f7508d25a.jpg","urlDenied":false,"width":300,"height":300,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAHUmy9Wanw","version":1,"files":[{"url":"assets/media/dbd625c28bac3f5a82eda54f7508d25a.jpg","urlDenied":false,"width":300,"height":300,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/jpeg"}]}],"C":[],"D":[],"E":[{"A":"https://canva-hosted-embed.com/codelet/DP_985cc44d1303421d87cffa5df6636100/cj6n7jabrs751xnm","Q":false,"B":"Canva","D":1788961553463,"E":"\x3ciframe src=\\"https://cj6n7jabrs751xnm.canvacode.com/codelet/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..pnj8N83bMxezInTV.J8EGOWrg2CbLatSZ6JrA1KG8NeyPXHAZ25zw08JiuBU5teX68B40w1NRWXZERIlafixQoP2u954hCKwlctXBPuL71a0gqErN7DUoFV7OxdL2HM91az60KDFXOggECt2JoxE4wCMp_cuPDlt979mjV0q7vvrt2Q2WDM29bKXyluuNpCNCdgwb4qyQEWozpClSLUxRqwhozNRS7sIdVwf4-diV7LOSFMfJ0qaI_45Tn30157ZGL_RsDK0izkiqPzHPZkpsAU1feaXzxcdnRvYmvsU94o17suT3EIR04ibteB7OWcFLLYNzE5PAj_tH68IrzxV8d73yJraXlaWXg3Q141QTe48HRkvIvtH_DRweCuOLehkY0wLC_yQTasqW4RVu1w11fVHEgjZIu8IWE5qjSXrEF3ZyyM0J5TzHwJT2u0E_yov9BqGHa2vAEAvM2EiVRhgLjM2ZWJ69wlsGgQHMtIqbe7Uk10XDslQH0XhPhtdFqukMsubI86T-EDOgPwFxIpVBuaedsIOJJatwlrRVdGLhDK0tu9M0xZcu5LbYU7wUVwrelxeBmLXZv25KX3YiCGfeEUSqUNXPIMjGmbo7fUNh9uPSyPh2nFmn.UcoghW6Xk_A4HFxR8AHchQ/index.html?pin_id=f9cf68852de5958ef118b68426dcd68d\\" width=\\"1366\\" height=\\"768\\" frameborder=\\"0\\" sandbox=\\"allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox\\" style=\\"width:100%;height:100%;border:0\\">\x3c/iframe>","F":1366,"G":768}],"I":[],"F":[],"H":[],"G":[]},"B":[{"A":"YACgEZ1cb1Q","B":0,"C":"Arimo","D":[{"style":"ITALICS","files":[{"url":"assets/fonts/711f50b3a8c00bb7e2e05ef85f982cb6.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":240584}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2077},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-425,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":1}}},{"style":"BOLD_ITALICS","files":[{"url":"assets/fonts/0803f40e19a074a5520c2746a6ba3c95.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":237588}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2109},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":33}}},{"style":"REGULAR","files":[{"url":"assets/fonts/834f64ff415fb8f4f5d92d8fd40507e9.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234332}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2007},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":64}}},{"style":"BOLD","files":[{"url":"assets/fonts/b07201e0e9fc452103c1c0345b0e7c1d.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234660}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2116},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":32}}}],"E":false},{"A":"YAGXhLOKv44","B":0,"C":"Work Sans","D":[{"style":"MEDIUM_ITALICS","files":[{"url":"assets/fonts/b978739a2d52f662ddfd60cb514adfe0.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84472}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-297,"yMax":1098},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"HEAVY","files":[{"url":"assets/fonts/8e6f3a7f33ab649dfb9e798f5140520c.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":79288}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-343,"yMax":1105},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"BOLD","files":[{"url":"assets/fonts/2bfb8cb3236e155f8f767943a394f9f0.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":89292}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-341,"yMax":1098},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":160}}},{"style":"MEDIUM","files":[{"url":"assets/fonts/73679fc63f872f1fa52e12f8efabae25.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":88456}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-338,"yMax":1098},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"ITALICS","files":[{"url":"assets/fonts/69bc6d9b6cff53e9c6fa060b1e653aaa.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":79608}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-292,"yMax":1100},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"EXTRA_LIGHT_ITALICS","files":[{"url":"assets/fonts/ff1dbe03c4f008a0d8a0f79e48034590.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":85104}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-270,"yMax":1059},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"EXTRA_LIGHT","files":[{"url":"assets/fonts/971853cd18d94efadc1952102897af1a.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":88472}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-330,"yMax":1059},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"REGULAR","files":[{"url":"assets/fonts/56c832532c112d859b636342b9e4601a.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":83704}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-337,"yMax":1100},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"LIGHT_ITALICS","files":[{"url":"assets/fonts/e764193e4b73869f9bfde1deb0c51bd7.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84508}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-279,"yMax":1077},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"ULTRA_BOLD","files":[{"url":"assets/fonts/8c8dc6c789a84d42f2aac7b880f7b4a5.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":88784}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-342,"yMax":1102},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"ULTRA_BOLD_ITALICS","files":[{"url":"assets/fonts/a16169c95d8b89b72f3b3692f77bdb03.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":83904}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-316,"yMax":1102},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"THIN_ITALICS","files":[{"url":"assets/fonts/4d02e7a4e296cdc49bffbe05670aabbd.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":81568}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-269,"yMax":1050},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"HEAVY_ITALICS","files":[{"url":"assets/fonts/ec835b1f26f94a748c319055a3f48bd6.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":75308}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-322,"yMax":1105},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"THIN","files":[{"url":"assets/fonts/d8abfbabea43cda6ed9116206af43079.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84708}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-329,"yMax":1050},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"SEMI_BOLD_ITALICS","files":[{"url":"assets/fonts/0428785bebd6faa87405edbefdbcc917.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84908}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-303,"yMax":1095},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":129}}},{"style":"BOLD_ITALICS","files":[{"url":"assets/fonts/da9d3fb672f67e689f5f834e77ab2abe.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":84732}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-310,"yMax":1098},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":161}}},{"style":"SEMI_BOLD","files":[{"url":"assets/fonts/4ff68830e2850588f4cf1e759da18c76.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":89292}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-339,"yMax":1095},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}},{"style":"LIGHT","files":[{"url":"assets/fonts/00c9819b4a06727bed58ca4594ebfec6.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":88412}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-333,"yMax":1077},"hhea":{"ascender":930,"descender":-243,"lineGap":0},"os2":{"sTypoAscender":930,"sTypoDescender":-243,"sTypoLineGap":0,"usWinAscent":1105,"usWinDescent":343,"fsSelection":192}}}],"E":false},{"A":"YACgEZml080","B":0,"C":"Fredoka","D":[{"style":"REGULAR","files":[{"url":"assets/fonts/fff1e3916422907a51ddd3749fd3d589.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":21724}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-236,"yMax":974},"hhea":{"ascender":974,"descender":-236,"lineGap":0},"os2":{"sTypoAscender":974,"sTypoDescender":-236,"sTypoLineGap":0,"usWinAscent":974,"usWinDescent":236,"fsSelection":64}}}],"E":false}],"E":[{"type":"RASTER","id":"MAHUmzqlZYk","version":1,"files":[{"url":"assets/media/4fc9f7a604fa3d32f0b75434d7a94be2.png","urlDenied":false,"width":800,"height":533,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUmzqlZYk","version":1,"files":[{"url":"assets/media/522769a80d0438ea6461c6e0f5fa6d67.png","urlDenied":false,"width":1536,"height":1024,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUmzqlZYk","version":1,"files":[{"url":"assets/media/522769a80d0438ea6461c6e0f5fa6d67.png","urlDenied":false,"width":1536,"height":1024,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUm0gDcUI","version":1,"files":[{"url":"assets/media/3a7a39b88696326d306b514f298d01e9.png","urlDenied":false,"width":800,"height":800,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUm0gDcUI","version":1,"files":[{"url":"assets/media/5132cfe00997135d75c456c819a1e9f5.png","urlDenied":false,"width":1181,"height":1181,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUm0gDcUI","version":1,"files":[{"url":"assets/media/5132cfe00997135d75c456c819a1e9f5.png","urlDenied":false,"width":1181,"height":1181,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAHUmy9Wanw","version":1,"files":[{"url":"assets/media/dbd625c28bac3f5a82eda54f7508d25a.jpg","urlDenied":false,"width":300,"height":300,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAHUmy9Wanw","version":1,"files":[{"url":"assets/media/dbd625c28bac3f5a82eda54f7508d25a.jpg","urlDenied":false,"width":300,"height":300,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAHUmy9Wanw","version":1,"files":[{"url":"assets/media/dbd625c28bac3f5a82eda54f7508d25a.jpg","urlDenied":false,"width":300,"height":300,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/jpeg"}]}],"F":[],"G":[],"H":[{"A":"https://canva-hosted-embed.com/codelet/DP_985cc44d1303421d87cffa5df6636100/cj6n7jabrs751xnm","Q":false,"B":"Canva","D":1788961553463,"E":"\x3ciframe src=\\"https://cj6n7jabrs751xnm.canvacode.com/codelet/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..pnj8N83bMxezInTV.J8EGOWrg2CbLatSZ6JrA1KG8NeyPXHAZ25zw08JiuBU5teX68B40w1NRWXZERIlafixQoP2u954hCKwlctXBPuL71a0gqErN7DUoFV7OxdL2HM91az60KDFXOggECt2JoxE4wCMp_cuPDlt979mjV0q7vvrt2Q2WDM29bKXyluuNpCNCdgwb4qyQEWozpClSLUxRqwhozNRS7sIdVwf4-diV7LOSFMfJ0qaI_45Tn30157ZGL_RsDK0izkiqPzHPZkpsAU1feaXzxcdnRvYmvsU94o17suT3EIR04ibteB7OWcFLLYNzE5PAj_tH68IrzxV8d73yJraXlaWXg3Q141QTe48HRkvIvtH_DRweCuOLehkY0wLC_yQTasqW4RVu1w11fVHEgjZIu8IWE5qjSXrEF3ZyyM0J5TzHwJT2u0E_yov9BqGHa2vAEAvM2EiVRhgLjM2ZWJ69wlsGgQHMtIqbe7Uk10XDslQH0XhPhtdFqukMsubI86T-EDOgPwFxIpVBuaedsIOJJatwlrRVdGLhDK0tu9M0xZcu5LbYU7wUVwrelxeBmLXZv25KX3YiCGfeEUSqUNXPIMjGmbo7fUNh9uPSyPh2nFmn.UcoghW6Xk_A4HFxR8AHchQ/index.html?pin_id=f9cf68852de5958ef118b68426dcd68d\\" width=\\"1366\\" height=\\"768\\" frameborder=\\"0\\" sandbox=\\"allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox\\" style=\\"width:100%;height:100%;border:0\\">\x3c/iframe>","F":1366,"G":768}],"S":[],"K":{},"Q":{"A":false,"B":true,"M":true},"R":false,"W":false,"U":true,"V":true,"X":true,"Y":{"A":false}},"ui":{"N":false,"A":true,"B":"A","C":false,"D":false,"H":false,"K":"A","J":false,"P":false}}'); window['flags'] = JSON.parse('{"df0d6e0a":true,"4675fd09":true,"9e7217ba":true,"4073adf":true,"d2199edc":true,"28fb95f5":true,"d1c88bcc":true,"35bc6688":true,"978ce15d":150000.0,"de7ef84c":true,"a5f31b0e":true,"ea152930":true,"6426d63e":false,"cc23b239":true,"eacb4698":true,"b6b6f822":true,"a59560d3":600000.0,"7c939d70":true,"8679f7b1":true}'); window['cmsg'] = window['cmsg'] || { locale: "tr-TR", strings: {} };})();</script><script crossorigin="anonymous" src="assets/d56f86fa1b9a6b61.runtime.js" defer integrity="sha512-wBDe2poBovNi30fzJ/y9wKe79uWP35I5JFVU+MtJeIv2akaNEYHosjoTGn5nPKcwziLVkCs6gTqwp7OjDhe9Gw==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"></script><script crossorigin="anonymous" src="assets/e6d9690df7022fb8.s4le6a.vendor.js" defer integrity="sha512-CKTxAr+UOPx/MOoLT6ihX3xz5G6jP2q86jBMqT60c6kT+RnlKpA2RqUTjFa43m3XjRKkVQ3yGAwtSjfbxN0v2Q==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"></script><script crossorigin="anonymous" src="assets/f34af0df47ca8d73.vendor.js" defer integrity="sha512-/w9eIRmtk5WMHehLrl/IwIblDfUfH+kaflDbacmi0B1SBUf+ghXVX7ROgcaYOswg/8FpAl1UazGWBZ89y8rHlA==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"></script><script crossorigin="anonymous" src="assets/8cddb0b79368fba5.strings.js" integrity="sha512-ljk15lpbiK77ivkvyj0AzFDAHGAxM8fnp9xZyzYj20b88RmouQKQSaHO4f4XWk/FhXtYjHXgP43AxtAIzIvMuw==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"></script><script crossorigin="anonymous" src="assets/3779548894a10fa5.tr-TR.js" integrity="sha512-6q6mEjRlakHoWJZdRF09PztlIVltaJapRHeDMxnZnSxHY5nKN8ddV/bxFpd6pdZLPjbr3hbmUGrr6pVaSGKt1w==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"></script><script crossorigin="anonymous" src="assets/723cc1ad9f9ff181.js" defer integrity="sha512-Ib1Vrc4KHz5MX+8y1WImr6z0vxhAfV/yVuU7JFtOLellh/UBWh9aRI7J8Yo0+fqzawuBlQaQfy/O5LVatan4mA==" nonce="63aca029-31ed-43fa-ad34-4a25572b190e"></script></body></html>
+        :root {
+            --bilfen-navy: #00205B;
+            --bilfen-blue: #0047BB;
+            --bilfen-light-blue: #EBF3FF;
+            --bilfen-gold: #FFB800;
+            --bilfen-accent: #FF5722;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #00205B 50%, #1e293b 100%);
+            min-height: 100vh;
+            color: #1e293b;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .glass-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--bilfen-blue);
+            box-shadow: 0 15px 30px -5px rgba(0, 71, 187, 0.15);
+        }
+
+        .glass-card.selected {
+            border-color: var(--bilfen-blue);
+            background: #f0f7ff;
+            box-shadow: 0 0 0 4px rgba(0, 71, 187, 0.25);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0047BB 0%, #00205B 100%);
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 71, 187, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 71, 187, 0.45);
+        }
+
+        .btn-primary:active {
+            transform: translateY(1px);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #FFC700 0%, #FF9900 100%);
+            color: #00205B;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(255, 184, 0, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(255, 184, 0, 0.5);
+        }
+
+        #flight-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: calc(100 * min(var(--vh, 1vh), 1vh));
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(0, 71, 187, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(0, 71, 187, 0.8); }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .float-anim {
+            animation: floatSlow 3s ease-in-out infinite;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="https://cj6n7jabrs751xnm.canvacode.com/codelet/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..pnj8N83bMxezInTV.J8EGOWrg2CbLatSZ6JrA1KG8NeyPXHAZ25zw08JiuBU5teX68B40w1NRWXZERIlafixQoP2u954hCKwlctXBPuL71a0gqErN7DUoFV7OxdL2HM91az60KDFXOggECt2JoxE4wCMp_cuPDlt979mjV0q7vvrt2Q2WDM29bKXyluuNpCNCdgwb4qyQEWozpClSLUxRqwhozNRS7sIdVwf4-diV7LOSFMfJ0qaI_45Tn30157ZGL_RsDK0izkiqPzHPZkpsAU1feaXzxcdnRvYmvsU94o17suT3EIR04ibteB7OWcFLLYNzE5PAj_tH68IrzxV8d73yJraXlaWXg3Q141QTe48HRkvIvtH_DRweCuOLehkY0wLC_yQTasqW4RVu1w11fVHEgjZIu8IWE5qjSXrEF3ZyyM0J5TzHwJT2u0E_yov9BqGHa2vAEAvM2EiVRhgLjM2ZWJ69wlsGgQHMtIqbe7Uk10XDslQH0XhPhtdFqukMsubI86T-EDOgPwFxIpVBuaedsIOJJatwlrRVdGLhDK0tu9M0xZcu5LbYU7wUVwrelxeBmLXZv25KX3YiCGfeEUSqUNXPIMjGmbo7fUNh9uPSyPh2nFmn.UcoghW6Xk_A4HFxR8AHchQ/data_sdk.js?pin_id=f9cf68852de5958ef118b68426dcd68d" type="text/javascript"></script>
+  <script src="https://cj6n7jabrs751xnm.canvacode.com/codelet/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..pnj8N83bMxezInTV.J8EGOWrg2CbLatSZ6JrA1KG8NeyPXHAZ25zw08JiuBU5teX68B40w1NRWXZERIlafixQoP2u954hCKwlctXBPuL71a0gqErN7DUoFV7OxdL2HM91az60KDFXOggECt2JoxE4wCMp_cuPDlt979mjV0q7vvrt2Q2WDM29bKXyluuNpCNCdgwb4qyQEWozpClSLUxRqwhozNRS7sIdVwf4-diV7LOSFMfJ0qaI_45Tn30157ZGL_RsDK0izkiqPzHPZkpsAU1feaXzxcdnRvYmvsU94o17suT3EIR04ibteB7OWcFLLYNzE5PAj_tH68IrzxV8d73yJraXlaWXg3Q141QTe48HRkvIvtH_DRweCuOLehkY0wLC_yQTasqW4RVu1w11fVHEgjZIu8IWE5qjSXrEF3ZyyM0J5TzHwJT2u0E_yov9BqGHa2vAEAvM2EiVRhgLjM2ZWJ69wlsGgQHMtIqbe7Uk10XDslQH0XhPhtdFqukMsubI86T-EDOgPwFxIpVBuaedsIOJJatwlrRVdGLhDK0tu9M0xZcu5LbYU7wUVwrelxeBmLXZv25KX3YiCGfeEUSqUNXPIMjGmbo7fUNh9uPSyPh2nFmn.UcoghW6Xk_A4HFxR8AHchQ/resizing_sdk.js?pin_id=f9cf68852de5958ef118b68426dcd68d" type="text/javascript"></script>
+ 
+</head>
+<body>
+
+  <header data-template-id="header-bar" class="canva-header bg-white/95 backdrop-filter backdrop-blur-md border-b-4 border-yellow-400 sticky top-0 z-40 shadow-md">
+   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+     <img data-template-id="bilfen-logo" class="canva-image h-12 md:h-14 object-contain rounded-lg shadow-sm border border-slate-200">
+    </div>
+    <div class="text-center flex-1 mx-2">
+     <h1 data-template-id="app-title" class="canva-text text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-900 via-blue-700 to-indigo-900 tracking-tight">Avatarım Harezmi ile Konuşuyor</h1>
+     <p data-template-id="app-subtitle" class="canva-text text-xs md:text-sm font-semibold text-blue-600 hidden sm:block">Bilfen Algoritma & Yapay Zeka Öğrenme Platformu 🚀</p>
+    </div>
+    <div class="flex items-center space-x-2 bg-blue-50 px-3 py-1.5 rounded-full border border-blue-200 shadow-inner">
+     <img data-template-id="header-robi-img" class="canva-image w-9 h-9 md:w-11 md:h-11 rounded-full object-cover border-2 border-yellow-400 shadow">
+     <div class="hidden md:block text-left">
+      <span data-template-id="header-robi-name" class="canva-text block text-xs font-bold text-blue-900 leading-tight">Rehberin Robi</span> <span data-template-id="header-robi-desc" class="canva-text text-[10px] text-blue-600 font-medium">Sana yardımcı olmaya hazır!</span>
+     </div>
+    </div>
+   </div>
+  </header>
+  <main class="flex-1 max-w-7xl w-full mx-auto p-3 md:p-6 flex flex-col justify-center">
+   <div id="app-viewport" class="w-full">
+    <!-- STAGE 0: START SCREEN -->
+    <div id="stage-start" class="glass-panel rounded-3xl p-6 md:p-10 text-center max-w-3xl mx-auto shadow-2xl transition-all">
+     <div class="relative mb-6 inline-block">
+      <div class="absolute -inset-2 bg-gradient-to-r from-yellow-400 to-blue-600 rounded-full blur-lg opacity-40 float-anim"></div><img data-template-id="start-robi-img" class="canva-image relative w-36 h-36 md:w-48 md:h-48 mx-auto rounded-full object-cover border-4 border-white shadow-2xl">
+     </div>
+     <h2 data-template-id="start-heading" class="canva-text text-2xl md:text-4xl font-extrabold text-blue-950 mb-3">Hoş Geldin Sevgili Öğrencimiz! 👋</h2>
+     <p data-template-id="start-description" class="canva-text text-slate-600 text-base md:text-lg mb-8 max-w-xl mx-auto font-medium">Ben Robi! Bugün birlikte kendi özel dijital avatarını tasarlayacağız ve tarihteki büyük matematikçi Harezmi ile sohbet edeceğiz.</p><button onclick="app.startWizard()" data-template-id="start-button" class="canva-button btn-gold text-xl px-10 py-4 rounded-2xl flex items-center justify-center space-x-3 mx-auto shadow-xl cursor-pointer"> <span>KARAKTERİMİ TASARLAMAYA BAŞLA</span> <i class="fa-solid fa-palette text-2xl"></i> </button>
+    </div><!-- STAGE 1: AVATAR DESIGN STUDIO -->
+    <div id="stage-wizard" class="hidden flex flex-col gap-6">
+     <div id="step-nav-bar" class="w-full bg-white/95 backdrop-blur rounded-2xl p-3 border-2 border-blue-200 shadow-xl">
+      <div class="text-xs font-bold text-blue-900 uppercase tracking-wider mb-2 px-2 flex items-center justify-between">
+       <span><i class="fa-solid fa-sliders text-yellow-500 mr-1.5"></i>Tasarım Seçenekleri (İstediğin Özelliğe Tıkla)</span> <span class="text-[11px] text-slate-500 font-normal">Karakterini dilediğin gibi özelleştir!</span>
+      </div>
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 pt-1 no-scrollbar" id="steps-container">
+      </div>
+     </div>
+     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div class="lg:col-span-5 bg-white rounded-3xl p-5 border-2 border-slate-200 shadow-xl flex flex-col items-center justify-between lg:sticky lg:top-24">
+       <div class="w-full text-center mb-3 flex items-center justify-between">
+        <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider"> <i class="fa-solid fa-sparkles mr-1 text-yellow-500"></i> Avatar Canlı Önizleme </span> <button onclick="app.randomizeAvatar()" class="text-xs text-blue-600 hover:text-blue-800 font-bold flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-lg transition"> <i class="fa-solid fa-dice"></i> <span>Rastgele Fikir Al</span> </button>
+       </div>
+       <div class="relative w-full aspect-square max-w-[320px] bg-gradient-to-b from-blue-50 via-slate-50 to-indigo-100 rounded-2xl border-2 border-blue-100 shadow-inner flex items-center justify-center p-2 overflow-hidden">
+        <div id="avatar-svg-wrapper" class="w-full h-full flex items-center justify-center">
+        </div>
+       </div>
+       <div class="mt-4 w-full bg-slate-50 rounded-xl p-3 border border-slate-200 text-xs text-slate-600 flex flex-wrap gap-1.5 justify-center">
+        <span id="summary-gender" class="bg-white px-2 py-0.5 rounded border border-slate-200 font-semibold text-blue-900">Kız</span> <span id="summary-hair" class="bg-white px-2 py-0.5 rounded border border-slate-200">Düz Saç</span> <span id="summary-hair-color" class="bg-white px-2 py-0.5 rounded border border-slate-200">Siyah Saç</span> <span id="summary-eye" class="bg-white px-2 py-0.5 rounded border border-slate-200">Kahverengi Göz</span> <span id="summary-skin" class="bg-white px-2 py-0.5 rounded border border-slate-200">Açık Ten</span> <span id="summary-acc" class="bg-white px-2 py-0.5 rounded border border-slate-200">Aksesuar Yok</span>
+       </div>
+      </div>
+      <div class="lg:col-span-7 bg-white rounded-3xl p-6 border-2 border-slate-200 shadow-xl flex flex-col justify-between min-h-[460px]">
+       <div>
+        <div class="mb-5 pb-3 border-b border-slate-100 flex items-center justify-between">
+         <div>
+          <h3 id="step-title" class="text-2xl font-bold text-blue-950 flex items-center gap-2"></h3>
+          <p id="step-subtitle" class="text-sm text-slate-500 font-medium mt-1"></p>
+         </div><span id="step-counter" class="text-sm font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200"> Adım 1 / 6 </span>
+        </div>
+        <div id="options-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 my-4">
+        </div>
+       </div>
+       <div class="flex items-center justify-between pt-6 border-t border-slate-100 mt-6">
+        <button id="btn-prev" onclick="app.prevStep()" class="px-5 py-2.5 rounded-xl border-2 border-slate-300 font-bold text-slate-600 hover:bg-slate-100 transition disabled:opacity-40 disabled:cursor-not-allowed flex items-center space-x-2"> <i class="fa-solid fa-chevron-left"></i> <span>Önceki Özellik</span> </button> <button id="btn-next" onclick="app.nextStep()" class="btn-primary px-6 py-2.5 rounded-xl font-bold flex items-center space-x-2"> <span id="btn-next-text">Sonraki Adım</span> <i id="btn-next-icon" class="fa-solid fa-chevron-right"></i> </button>
+       </div>
+      </div>
+     </div>
+    </div><!-- STAGE 2: CHAT STAGE -->
+    <div id="stage-chat" class="hidden flex flex-col gap-6 max-w-5xl mx-auto w-full">
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+      <div id="avatar-chat-card" class="bg-gradient-to-b from-blue-50 to-slate-50 rounded-2xl p-4 border-2 border-blue-200 flex flex-col items-center text-center shadow-md relative">
+       <div class="w-32 h-32 md:w-36 md:h-36 rounded-full border-4 border-white shadow-lg overflow-hidden bg-white mb-2 flex items-center justify-center">
+        <div id="chat-avatar-svg" class="w-full h-full"></div>
+       </div>
+       <h4 data-template-id="chat-avatar-label" class="canva-text font-bold text-blue-950 text-base md:text-lg">Senin Avatarın</h4><span data-template-id="chat-avatar-badge" class="canva-tag text-xs text-blue-700 font-bold bg-blue-100 px-3 py-0.5 rounded-full mt-1 border border-blue-200">Bilfen Öğrencisi 🎓</span>
+      </div>
+      <div id="harezmi-chat-card" class="bg-gradient-to-b from-amber-50 to-orange-50 rounded-2xl p-4 border-2 border-amber-300 flex flex-col items-center text-center shadow-md relative">
+       <div class="w-32 h-32 md:w-36 md:h-36 rounded-full border-4 border-white shadow-lg overflow-hidden bg-white mb-2">
+        <img data-template-id="harezmi-portrait" class="canva-image w-full h-full object-cover">
+       </div>
+       <h4 data-template-id="harezmi-name" class="canva-text font-bold text-amber-950 text-base md:text-lg">Harezmi</h4><span data-template-id="harezmi-badge" class="canva-tag text-xs text-amber-800 font-bold bg-amber-100 px-3 py-0.5 rounded-full mt-1 border border-amber-200">Matematikçi & Bilim İnsanı 📐</span>
+      </div>
+     </div>
+     <div id="status-banner" class="hidden bg-emerald-500 text-white p-3.5 rounded-2xl font-extrabold text-center text-lg shadow-xl flex items-center justify-center space-x-3 animate-bounce">
+      <i class="fa-solid fa-envelope-circle-check text-2xl"></i> <span id="status-banner-text">📨 Mesaj Alındı! Harezmi mesajını okuyor...</span>
+     </div>
+     <div data-template-id="chat-panel" class="canva-panel bg-white/95 rounded-3xl p-4 md:p-6 border-2 border-slate-200 shadow-xl flex flex-col justify-between min-h-[380px]">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200 mb-4">
+       <h3 class="text-lg font-bold text-blue-950 flex items-center gap-2"><i class="fa-solid fa-comments text-amber-500"></i> <span data-template-id="chat-title" class="canva-text">Harezmi ile Sohbet Akışı</span></h3><span data-template-id="chat-notification" class="canva-tag text-xs bg-amber-100 text-amber-900 font-bold px-3 py-1 rounded-full border border-amber-200">💌 Harezmi'den mesajın var!</span>
+      </div>
+      <div id="chat-thread" class="space-y-4 max-h-[320px] overflow-y-auto pr-2 mb-4 scroll-smooth">
+       <div class="flex items-start gap-3">
+        <img data-template-id="harezmi-chat-thumb" class="canva-image w-10 h-10 rounded-full border-2 border-amber-400 object-cover flex-shrink-0 mt-1 shadow-sm">
+        <div class="bg-amber-50 border-2 border-amber-200 text-slate-800 p-4 rounded-2xl rounded-tl-none max-w-xl shadow-sm">
+         <span class="block text-xs font-bold text-amber-900 mb-1 flex items-center"> <i class="fa-solid fa-scroll text-amber-600 mr-1.5"></i> Harezmi: </span>
+         <p data-template-id="harezmi-greeting" class="canva-text text-sm md:text-base font-semibold leading-relaxed">Merhaba sevgili öğrencim! Ben Harezmi. Tasarladığın harika avatarınla seni gördüğüme çok sevindim! Bana ne sormak istersin?</p>
+        </div>
+       </div>
+      </div>
+      <div id="typing-indicator" class="hidden flex items-center space-x-2 text-slate-500 text-xs font-bold pl-12 mb-3">
+       <i class="fa-solid fa-pen-nib animate-spin text-amber-600"></i> <span>Harezmi cevabını yazıyor...</span> <span class="inline-flex space-x-1"> <span class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce"></span> <span class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce [animation-delay:0.2s]"></span> <span class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce [animation-delay:0.4s]"></span> </span>
+      </div>
+      <div id="chat-input-section" class="pt-3 border-t border-slate-200">
+       <label for="student-message" class="block font-bold text-blue-950 mb-2 text-sm md:text-base flex items-center justify-between"> <span data-template-id="input-label" class="canva-text"><i class="fa-solid fa-pen-to-square text-blue-600 mr-2"></i><span data-template-id="input-label-text" class="canva-text">Harezmi'ye Mesajın veya Sorun:</span></span> <span data-template-id="input-hint" class="canva-text text-xs font-normal text-slate-500 hidden sm:inline">Aşağıdaki sorulardan birini seçebilir veya kendin yazabilirsin!</span> </label>
+       <div class="flex flex-wrap gap-2 mb-3">
+        <button onclick="app.setMessage('Merhaba Harezmi')" data-template-id="quick-q1" class="canva-button text-xs bg-slate-100 hover:bg-blue-100 text-blue-900 font-bold px-3 py-1.5 rounded-full transition border border-slate-200 cursor-pointer">👋 Merhaba Harezmi</button> <button onclick="app.setMessage('Algoritma nedir?')" data-template-id="quick-q2" class="canva-button text-xs bg-slate-100 hover:bg-blue-100 text-blue-900 font-bold px-3 py-1.5 rounded-full transition border border-slate-200 cursor-pointer">💡 Algoritma nedir?</button> <button onclick="app.setMessage('Sıfır sayısını nasıl buldun?')" data-template-id="quick-q3" class="canva-button text-xs bg-slate-100 hover:bg-blue-100 text-blue-900 font-bold px-3 py-1.5 rounded-full transition border border-slate-200 cursor-pointer">🔢 Sıfır (0) sayısı nedir?</button> <button onclick="app.setMessage('Teşekkür ederim')" data-template-id="quick-q4" class="canva-button text-xs bg-slate-100 hover:bg-blue-100 text-blue-900 font-bold px-3 py-1.5 rounded-full transition border border-slate-200 cursor-pointer">🙏 Teşekkür ederim</button> <button onclick="app.setMessage('Seni çok seviyorum, sen harikasın!')" data-template-id="quick-q5" class="canva-button text-xs bg-slate-100 hover:bg-blue-100 text-blue-900 font-bold px-3 py-1.5 rounded-full transition border border-slate-200 cursor-pointer">❤️ Seni çok seviyorum</button>
+       </div>
+       <div class="flex items-center gap-2">
+        <textarea id="student-message" data-template-id="message-input" rows="2" class="canva-input w-full p-3.5 rounded-xl border-2 border-slate-300 focus:border-blue-600 focus:ring-4 focus:ring-blue-100 font-medium text-slate-800 text-sm md:text-base outline-none resize-none transition">Mesajını buraya yaz... (Örn: Merhaba Harezmi, bana matematiği nasıl keşfettiğini anlatır mısın?)</textarea> <button id="btn-send-message" onclick="app.sendPlaneMessage()" data-template-id="send-button" class="canva-button btn-gold text-base md:text-lg px-6 py-3.5 rounded-xl font-extrabold flex items-center justify-center space-x-2 cursor-pointer h-full whitespace-nowrap self-stretch"> <span>GÖNDER</span> <i class="fa-solid fa-paper-plane text-lg"></i> </button>
+       </div>
+      </div>
+      <div id="robi-praise-bar" class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+       <div class="flex items-center space-x-3">
+        <img data-template-id="footer-robi-img" class="canva-image w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-yellow-400 object-cover flex-shrink-0">
+        <div>
+         <h5 data-template-id="robi-footer-title" class="canva-text font-bold text-blue-950 text-xs md:text-sm">Robi Rehberin Diyor Ki:</h5>
+         <p data-template-id="robi-footer-text" class="canva-text text-slate-600 text-xs md:text-sm font-medium">Harika! Harezmi ile iletişim kurdun. Algoritma yolculuğunu tamamladın! 🚀</p>
+        </div>
+       </div><button onclick="app.resetAll()" data-template-id="reset-button" class="canva-button text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-3.5 py-2 rounded-xl transition border border-slate-300 flex items-center space-x-1.5 whitespace-nowrap"> <i class="fa-solid fa-rotate-left text-blue-600"></i> <span>Yeniden Başla</span> </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <div id="flight-container"></div>
+  <script>
+        const AVATAR_CONFIG = {
+            genders: {
+                girl: 'Kız',
+                boy: 'Erkek'
+            },
+            girlHairStyles: [
+                { id: 'kisa', name: 'Kısa Saç' },
+                { id: 'omuz', name: 'Omuz Hizası' },
+                { id: 'uzun_duz', name: 'Uzun Düz Saç' },
+                { id: 'dalgali', name: 'Dalgalı Saç' },
+                { id: 'kivircik', name: 'Kıvırcık Saç' },
+                { id: 'at_kuyrugu', name: 'At Kuyruğu' },
+                { id: 'orgu', name: 'Örgü' },
+                { id: 'topuz', name: 'Topuz' }
+            ],
+            boyHairStyles: [
+                { id: 'cok_kisa', name: 'Çok Kısa Saç' },
+                { id: 'kisa_duz', name: 'Kısa Düz Saç' },
+                { id: 'kisa_dalgali', name: 'Kısa Dalgalı Saç' },
+                { id: 'kisa_kivircik', name: 'Kısa Kıvırcık' },
+                { id: 'yanlar_kisa', name: 'Yanlar Kısa Üst Uzun' }
+            ],
+            hairColors: [
+                { id: 'siyah', name: 'Siyah', hex: '#1a1a1a' },
+                { id: 'koyu_kahve', name: 'Koyu Kahverengi', hex: '#3d2314' },
+                { id: 'kahverengi', name: 'Kahverengi', hex: '#6e4725' },
+                { id: 'kumral', name: 'Kumral', hex: '#b0824a' },
+                { id: 'sari', name: 'Sarı', hex: '#f0c243' },
+                { id: 'kizil', name: 'Kızıl', hex: '#b83b1d' }
+            ],
+            eyeColors: [
+                { id: 'kahverengi', name: 'Kahverengi', hex: '#52361b' },
+                { id: 'ela', name: 'Ela', hex: '#8a7538' },
+                { id: 'yesil', name: 'Yeşil', hex: '#2e7d32' },
+                { id: 'mavi', name: 'Mavi', hex: '#1e88e5' }
+            ],
+            skinColors: [
+                { id: 'acik', name: 'Açık Ten', hex: '#fde8d7', shadowHex: '#f1c2a5' },
+                { id: 'acik_bugday', name: 'Açık Buğday', hex: '#f4d0a5', shadowHex: '#e1a774' },
+                { id: 'bugday', name: 'Buğday', hex: '#e0ac69', shadowHex: '#c08945' },
+                { id: 'esmer', name: 'Esmer', hex: '#9e6339', shadowHex: '#73411e' }
+            ],
+            accessories: [
+                { id: 'yok', name: 'Aksesuar Yok', icon: 'fa-ban' },
+                { id: 'gozluk', name: 'Gözlük', icon: 'fa-glasses' },
+                { id: 'gunes_gozlugu', name: 'Güneş Gözlüğü', icon: 'fa-sunglasses' },
+                { id: 'sapka', name: 'Şapka', icon: 'fa-hat-cowboy' },
+                { id: 'tac', name: 'Taç', icon: 'fa-crown' },
+                { id: 'kulaklik', name: 'Kulaklık', icon: 'fa-headphones' },
+                { id: 'fiyonk', name: 'Fiyonk', icon: 'fa-ribbon' },
+                { id: 'kolye', name: 'Kolye', icon: 'fa-gem' }
+            ]
+        };
+
+        function generateAvatarSVG(state) {
+            const skin = AVATAR_CONFIG.skinColors.find(s => s.id === state.skinColor) || AVATAR_CONFIG.skinColors[0];
+            const eye = AVATAR_CONFIG.eyeColors.find(e => e.id === state.eyeColor) || AVATAR_CONFIG.eyeColors[0];
+            const hairCol = AVATAR_CONFIG.hairColors.find(h => h.id === state.hairColor) || AVATAR_CONFIG.hairColors[0];
+            const isGirl = state.gender === 'girl';
+            const skinHex = skin.hex;
+            const skinShadow = skin.shadowHex;
+            const hairHex = hairCol.hex;
+
+            let backHairSVG = '';
+            if (isGirl) {
+                if (state.hairStyle === 'uzun_duz') {
+                    backHairSVG = `<path d="M 75,120 Q 60,200 65,300 L 235,300 Q 240,200 225,120 Z" fill="${hairHex}"/>`;
+                } else if (state.hairStyle === 'omuz') {
+                    backHairSVG = `<path d="M 80,120 Q 68,180 72,250 L 228,250 Q 232,180 220,120 Z" fill="${hairHex}"/>`;
+                } else if (state.hairStyle === 'dalgali') {
+                    backHairSVG = `<path d="M 75,120 Q 55,180 70,230 Q 55,270 70,300 L 230,300 Q 245,270 230,230 Q 245,180 225,120 Z" fill="${hairHex}"/>`;
+                } else if (state.hairStyle === 'kivircik') {
+                    backHairSVG = `<path d="M 60,110 Q 40,160 55,220 Q 45,260 65,300 L 235,300 Q 255,260 245,220 Q 260,160 240,110 Z" fill="${hairHex}"/>`;
+                } else if (state.hairStyle === 'at_kuyrugu') {
+                    backHairSVG = `<path d="M 200,100 C 260,110 270,180 240,240 C 225,210 230,150 190,120 Z" fill="${hairHex}"/><circle cx="205" cy="115" r="12" fill="#FF4081"/>`;
+                } else if (state.hairStyle === 'orgu') {
+                    backHairSVG = `<path d="M 80,160 Q 60,220 70,290" stroke="${hairHex}" stroke-width="22" stroke-linecap="round" fill="none"/><path d="M 220,160 Q 240,220 230,290" stroke="${hairHex}" stroke-width="22" stroke-linecap="round" fill="none"/><circle cx="70" cy="290" r="7" fill="#FFB800"/><circle cx="230" cy="290" r="7" fill="#FFB800"/>`;
+                } else if (state.hairStyle === 'topuz') {
+                    backHairSVG = `<circle cx="150" cy="40" r="32" fill="${hairHex}"/><path d="M 130,58 L 170,58" stroke="#FF5722" stroke-width="6" stroke-linecap="round"/>`;
+                }
+            }
+
+            let frontHairSVG = '';
+            if (isGirl) {
+                switch (state.hairStyle) {
+                    case 'kisa':
+                        frontHairSVG = `<path d="M 85,120 C 80,60 110,48 150,48 C 190,48 220,60 215,120 C 210,100 190,80 150,82 C 110,80 90,100 85,120 Z" fill="${hairHex}"/>`;
+                        break;
+                    case 'omuz':
+                    case 'uzun_duz':
+                        frontHairSVG = `<path d="M 85,125 C 80,60 110,48 150,48 C 190,48 220,60 215,125 C 205,100 185,85 150,88 C 115,85 95,100 85,125 Z" fill="${hairHex}"/><path d="M 115,86 Q 135,105 150,88 Q 165,105 185,86" stroke="${hairHex}" stroke-width="4" fill="none"/>`;
+                        break;
+                    case 'dalgali':
+                        frontHairSVG = `<path d="M 85,125 C 80,55 110,45 150,45 C 190,45 220,55 215,125 Q 190,90 150,92 Q 110,90 85,125 Z" fill="${hairHex}"/>`;
+                        break;
+                    case 'kivircik':
+                        frontHairSVG = `<path d="M 80,120 C 65,100 65,75 85,65 C 80,45 105,35 125,40 C 135,25 165,25 175,40 C 195,35 220,45 215,65 C 235,75 235,100 220,120 C 200,90 180,92 150,92 C 120,92 100,90 80,120 Z" fill="${hairHex}"/><circle cx="105" cy="55" r="10" fill="${hairHex}"/><circle cx="195" cy="55" r="10" fill="${hairHex}"/><circle cx="150" cy="42" r="12" fill="${hairHex}"/>`;
+                        break;
+                    case 'at_kuyrugu':
+                    case 'orgu':
+                    case 'topuz':
+                        frontHairSVG = `<path d="M 86,120 C 82,60 110,50 150,50 C 190,50 218,60 214,120 C 200,95 180,85 150,88 C 120,85 100,95 86,120 Z" fill="${hairHex}"/>`;
+                        break;
+                    default:
+                        frontHairSVG = `<path d="M 86,120 C 82,60 110,50 150,50 C 190,50 218,60 214,120 C 200,95 180,85 150,88 C 120,85 100,95 86,120 Z" fill="${hairHex}"/>`;
+                }
+            } else {
+                switch (state.hairStyle) {
+                    case 'cok_kisa':
+                        frontHairSVG = `<path d="M 88,110 C 86,60 110,52 150,52 C 190,52 214,60 212,110 C 200,98 180,90 150,90 C 120,90 100,98 88,110 Z" fill="${hairHex}"/>`;
+                        break;
+                    case 'kisa_duz':
+                        frontHairSVG = `<path d="M 85,115 C 80,55 110,45 150,45 C 190,45 220,55 215,115 C 200,95 180,95 160,105 C 140,92 110,95 85,115 Z" fill="${hairHex}"/>`;
+                        break;
+                    case 'kisa_dalgali':
+                        frontHairSVG = `<path d="M 84,115 Q 70,80 100,55 Q 125,38 150,45 Q 175,38 200,55 Q 230,80 216,115 Q 190,90 150,95 Q 110,90 84,115 Z" fill="${hairHex}"/>`;
+                        break;
+                    case 'kisa_kivircik':
+                        frontHairSVG = `<path d="M 85,115 C 70,95 75,70 95,60 C 90,45 115,38 135,42 C 145,30 170,32 180,42 C 200,38 220,50 215,68 C 230,88 220,105 215,115 C 195,95 170,92 150,95 C 130,92 105,95 85,115 Z" fill="${hairHex}"/>`;
+                        break;
+                    case 'yanlar_kisa':
+                        frontHairSVG = `<path d="M 88,115 C 86,85 92,70 105,65 L 105,100 Z" fill="${hairHex}" opacity="0.6"/><path d="M 212,115 C 214,85 208,70 195,65 L 195,100 Z" fill="${hairHex}" opacity="0.6"/><path d="M 95,75 C 90,38 130,30 150,32 C 180,30 210,38 205,75 C 185,60 160,60 150,62 C 130,60 105,60 95,75 Z" fill="${hairHex}"/>`;
+                        break;
+                    default:
+                        frontHairSVG = `<path d="M 85,115 C 80,55 110,45 150,45 C 190,45 220,55 215,115 C 200,95 180,95 150,95 Z" fill="${hairHex}"/>`;
+                }
+            }
+
+            let accessorySVG = '';
+            switch (state.accessory) {
+                case 'gozluk':
+                    accessorySVG = `<rect x="102" y="122" width="40" height="30" rx="8" fill="none" stroke="#00205B" stroke-width="4"/><rect x="158" y="122" width="40" height="30" rx="8" fill="none" stroke="#00205B" stroke-width="4"/><line x1="142" y1="135" x2="158" y2="135" stroke="#00205B" stroke-width="4"/><line x1="88" y1="132" x2="102" y2="132" stroke="#00205B" stroke-width="3"/><line x1="198" y1="132" x2="212" y2="132" stroke="#00205B" stroke-width="3"/>`;
+                    break;
+                case 'gunes_gozlugu':
+                    accessorySVG = `<path d="M 100,120 L 144,120 L 140,152 L 104,152 Z" fill="#1e293b" rx="4"/><path d="M 156,120 L 200,120 L 196,152 L 160,152 Z" fill="#1e293b" rx="4"/><line x1="144" y1="126" x2="156" y2="126" stroke="#1e293b" stroke-width="4"/><line x1="108" y1="125" x2="120" y2="145" stroke="#ffffff" stroke-width="2" opacity="0.5"/><line x1="164" y1="125" x2="176" y2="145" stroke="#ffffff" stroke-width="2" opacity="0.5"/>`;
+                    break;
+                case 'sapka':
+                    accessorySVG = `<path d="M 85,80 C 85,40 115,25 150,25 C 185,25 215,40 215,80 Z" fill="#0047BB"/><path d="M 70,80 Q 150,70 230,80 L 225,90 Q 150,80 75,90 Z" fill="#00205B"/><circle cx="150" cy="25" r="6" fill="#FFB800"/><circle cx="150" cy="55" r="10" fill="#ffffff"/><circle cx="150" cy="55" r="7" fill="#00205B"/>`;
+                    break;
+                case 'tac':
+                    accessorySVG = `<path d="M 105,60 L 115,30 L 132,50 L 150,20 L 168,50 L 185,30 L 195,60 Z" fill="#FFC700" stroke="#E6A100" stroke-width="2"/><circle cx="115" cy="28" r="4" fill="#FF1744"/><circle cx="150" cy="18" r="5" fill="#29B6F6"/><circle cx="185" cy="28" r="4" fill="#FF1744"/>`;
+                    break;
+                case 'kulaklik':
+                    accessorySVG = `<path d="M 80,140 C 70,40 230,40 220,140" fill="none" stroke="#FF3D00" stroke-width="10" stroke-linecap="round"/><rect x="70" y="115" width="18" height="42" rx="9" fill="#212121"/><rect x="212" y="115" width="18" height="42" rx="9" fill="#212121"/><rect x="74" y="122" width="10" height="28" rx="5" fill="#FF3D00"/><rect x="216" y="122" width="10" height="28" rx="5" fill="#FF3D00"/>`;
+                    break;
+                case 'fiyonk':
+                    accessorySVG = `<g transform="translate(180, 55)"><path d="M 0,0 L -20,-12 L -20,12 Z" fill="#FF1744"/><path d="M 0,0 L 20,-12 L 20,12 Z" fill="#FF1744"/><circle cx="0" cy="0" r="6" fill="#FF80AB"/></g>`;
+                    break;
+                case 'kolye':
+                    accessorySVG = `<path d="M 122,230 Q 150,265 178,230" fill="none" stroke="#FFC700" stroke-width="3"/><polygon points="150,258 156,248 144,248" fill="#FF1744"/>`;
+                    break;
+            }
+
+            const eyelashes = isGirl ? `<path d="M 112,126 L 108,121 M 122,123 L 122,117 M 132,126 L 136,121" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/><path d="M 168,126 L 164,121 M 178,123 L 178,117 M 188,126 L 192,121" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>` : '';
+
+            return `
+                <svg viewBox="0 0 300 320" class="w-full h-full drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="shirtGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#0047BB"/>
+                            <stop offset="100%" stop-color="#00205B"/>
+                        </linearGradient>
+                    </defs>
+                    ${backHairSVG}
+                    <path d="M 70,320 L 85,230 Q 150,210 215,230 L 230,320 Z" fill="url(#shirtGrad)"/>
+                    <path d="M 125,225 L 150,250 L 175,225 Z" fill="#ffffff"/>
+                    <path d="M 135,225 L 150,240 L 165,225 Z" fill="#FFB800"/>
+                    <path d="M 130,185 L 170,185 L 170,225 L 130,225 Z" fill="${skinHex}"/>
+                    <path d="M 130,185 Q 150,200 170,185 L 170,198 Q 150,212 130,198 Z" fill="${skinShadow}"/>
+                    <circle cx="92" cy="142" r="14" fill="${skinHex}"/>
+                    <circle cx="208" cy="142" r="14" fill="${skinHex}"/>
+                    <circle cx="92" cy="142" r="8" fill="${skinShadow}" opacity="0.5"/>
+                    <circle cx="208" cy="142" r="8" fill="${skinShadow}" opacity="0.5"/>
+                    <path d="M 92,120 C 92,60 208,60 208,120 C 208,175 185,200 150,200 C 115,200 92,175 92,120 Z" fill="${skinHex}"/>
+                    <ellipse cx="125" cy="138" rx="13" ry="11" fill="#ffffff"/>
+                    <ellipse cx="175" cy="138" rx="13" ry="11" fill="#ffffff"/>
+                    <circle cx="125" cy="138" r="7" fill="${eye.hex}"/>
+                    <circle cx="175" cy="138" r="7" fill="${eye.hex}"/>
+                    <circle cx="125" cy="138" r="3.5" fill="#000000"/>
+                    <circle cx="175" cy="138" r="3.5" fill="#000000"/>
+                    <circle cx="122" cy="135" r="2.5" fill="#ffffff"/>
+                    <circle cx="172" cy="135" r="2.5" fill="#ffffff"/>
+                    <circle cx="127" cy="141" r="1" fill="#ffffff"/>
+                    <circle cx="177" cy="141" r="1" fill="#ffffff"/>
+                    ${eyelashes}
+                    <path d="M 110,122 Q 125,116 138,121" stroke="${hairHex}" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                    <path d="M 162,121 Q 175,116 190,122" stroke="${hairHex}" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                    <path d="M 150,142 Q 154,155 148,158" stroke="${skinShadow}" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    <path d="M 132,170 Q 150,186 168,170" stroke="#c2410c" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                    <path d="M 134,170 Q 150,186 166,170 Z" fill="#dc2626" opacity="0.8"/>
+                    <ellipse cx="106" cy="155" rx="8" ry="5" fill="#ff4d6d" opacity="0.3"/>
+                    <ellipse cx="194" cy="155" rx="8" ry="5" fill="#ff4d6d" opacity="0.3"/>
+                    ${frontHairSVG}
+                    ${accessorySVG}
+                </svg>
+            `;
+        }
+
+        class AvatarApp {
+            constructor() {
+                this.currentStepIndex = 0;
+                this.state = {
+                    gender: 'girl',
+                    hairStyle: 'omuz',
+                    hairColor: 'kahverengi',
+                    eyeColor: 'kahverengi',
+                    skinColor: 'acik',
+                    accessory: 'yok',
+                    studentMessage: '',
+                    harezmiReply: ''
+                };
+
+                this.steps = [
+                    { id: 'gender', title: 'Cinsiyet', subtitle: 'Karakterinin cinsiyetini seç!', icon: 'fa-user' },
+                    { id: 'hairStyle', title: 'Saç Şekli', subtitle: 'Sana en çok yakışan saç modelini seç!', icon: 'fa-scissors' },
+                    { id: 'hairColor', title: 'Saç Rengi', subtitle: 'Saç rengini seç!', icon: 'fa-palette' },
+                    { id: 'eyeColor', title: 'Göz Rengi', subtitle: 'Göz rengini belirle!', icon: 'fa-eye' },
+                    { id: 'skinColor', title: 'Ten Rengi', subtitle: 'Ten rengini belirle!', icon: 'fa-face-smile' },
+                    { id: 'accessory', title: 'Aksesuar', subtitle: 'Karakterine tarz bir aksesuar ekle!', icon: 'fa-glasses' },
+                    { id: 'ready', title: 'Tamamla', subtitle: 'Karakterin hazır! Şimdi Harezmi ile sohbet vakti.', icon: 'fa-circle-check' }
+                ];
+            }
+
+            init() {
+                this.renderStepNav();
+                this.updateAvatarPreview();
+            }
+
+            startWizard() {
+                document.getElementById('stage-start').classList.add('hidden');
+                document.getElementById('stage-wizard').classList.remove('hidden');
+                this.currentStepIndex = 0;
+                this.renderStep();
+                this.playAudio('click');
+            }
+
+            renderStepNav() {
+                const container = document.getElementById('steps-container');
+                container.innerHTML = '';
+                this.steps.forEach((step, idx) => {
+                    const isActive = idx === this.currentStepIndex;
+                    const btn = document.createElement('button');
+                    btn.className = `flex items-center space-x-2 px-3.5 py-2 rounded-xl font-bold text-xs whitespace-nowrap transition-all cursor-pointer ${isActive ? 'bg-gradient-to-r from-blue-700 to-blue-900 text-white shadow-md scale-105 border-2 border-yellow-400' : 'bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-900 border border-slate-200'}`;
+                    btn.onclick = () => { this.currentStepIndex = idx; this.renderStep(); };
+                    btn.innerHTML = `<span class="w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${isActive ? 'bg-yellow-400 text-blue-950 font-extrabold' : 'bg-slate-200 text-slate-700'}">${idx + 1}</span><i class="fa-solid ${step.icon} ${isActive ? 'text-yellow-300' : 'text-blue-600'}"></i><span>${step.title}</span>`;
+                    container.appendChild(btn);
+                });
+            }
+
+            renderStep() {
+                this.renderStepNav();
+                const step = this.steps[this.currentStepIndex];
+                document.getElementById('step-title').innerHTML = `<i class="fa-solid ${step.icon} text-blue-600"></i> ${step.title}`;
+                document.getElementById('step-subtitle').textContent = step.subtitle;
+                document.getElementById('step-counter').textContent = `Adım ${this.currentStepIndex + 1} / ${this.steps.length - 1}`;
+                const grid = document.getElementById('options-grid');
+                grid.innerHTML = '';
+
+                switch (step.id) {
+                    case 'gender':
+                        grid.className = 'grid grid-cols-2 gap-4 my-4';
+                        [{ id: 'girl', name: 'Kız Öğrenci', icon: 'fa-child-dress' }, { id: 'boy', name: 'Erkek Öğrenci', icon: 'fa-child' }].forEach(opt => {
+                            const card = this.createOptionCard(opt.name, `<i class="fa-solid ${opt.icon} text-4xl text-blue-600 mb-2"></i>`, this.state.gender === opt.id);
+                            card.onclick = () => {
+                                this.state.gender = opt.id;
+                                if (opt.id === 'boy' && !AVATAR_CONFIG.boyHairStyles.some(h => h.id === this.state.hairStyle)) this.state.hairStyle = AVATAR_CONFIG.boyHairStyles[0].id;
+                                else if (opt.id === 'girl' && !AVATAR_CONFIG.girlHairStyles.some(h => h.id === this.state.hairStyle)) this.state.hairStyle = AVATAR_CONFIG.girlHairStyles[0].id;
+                                this.updateAvatarPreview(); this.renderStep();
+                            };
+                            grid.appendChild(card);
+                        });
+                        break;
+                    case 'hairStyle':
+                        grid.className = 'grid grid-cols-2 sm:grid-cols-3 gap-3 my-4';
+                        (this.state.gender === 'girl' ? AVATAR_CONFIG.girlHairStyles : AVATAR_CONFIG.boyHairStyles).forEach(opt => {
+                            const card = this.createOptionCard(opt.name, `<i class="fa-solid fa-scissors text-2xl text-blue-500 mb-1"></i>`, this.state.hairStyle === opt.id);
+                            card.onclick = () => { this.state.hairStyle = opt.id; this.updateAvatarPreview(); this.renderStep(); };
+                            grid.appendChild(card);
+                        });
+                        break;
+                    case 'hairColor':
+                        grid.className = 'grid grid-cols-2 sm:grid-cols-3 gap-3 my-4';
+                        AVATAR_CONFIG.hairColors.forEach(opt => {
+                            const card = this.createOptionCard(opt.name, `<div class="w-10 h-10 rounded-full border-2 border-white shadow-md mx-auto mb-1" style="background-color: ${opt.hex}"></div>`, this.state.hairColor === opt.id);
+                            card.onclick = () => { this.state.hairColor = opt.id; this.updateAvatarPreview(); this.renderStep(); };
+                            grid.appendChild(card);
+                        });
+                        break;
+                    case 'eyeColor':
+                        grid.className = 'grid grid-cols-2 sm:grid-cols-2 gap-3 my-4';
+                        AVATAR_CONFIG.eyeColors.forEach(opt => {
+                            const card = this.createOptionCard(opt.name, `<div class="w-10 h-10 rounded-full border-2 border-white shadow-md mx-auto mb-1 flex items-center justify-center" style="background-color: ${opt.hex}"><div class="w-3 h-3 bg-black rounded-full"></div></div>`, this.state.eyeColor === opt.id);
+                            card.onclick = () => { this.state.eyeColor = opt.id; this.updateAvatarPreview(); this.renderStep(); };
+                            grid.appendChild(card);
+                        });
+                        break;
+                    case 'skinColor':
+                        grid.className = 'grid grid-cols-2 sm:grid-cols-2 gap-3 my-4';
+                        AVATAR_CONFIG.skinColors.forEach(opt => {
+                            const card = this.createOptionCard(opt.name, `<div class="w-10 h-10 rounded-full border-2 border-slate-200 shadow-md mx-auto mb-1" style="background-color: ${opt.hex}"></div>`, this.state.skinColor === opt.id);
+                            card.onclick = () => { this.state.skinColor = opt.id; this.updateAvatarPreview(); this.renderStep(); };
+                            grid.appendChild(card);
+                        });
+                        break;
+                    case 'accessory':
+                        grid.className = 'grid grid-cols-2 sm:grid-cols-3 gap-3 my-4';
+                        AVATAR_CONFIG.accessories.forEach(opt => {
+                            const card = this.createOptionCard(opt.name, `<i class="fa-solid ${opt.icon} text-2xl text-yellow-500 mb-1"></i>`, this.state.accessory === opt.id);
+                            card.onclick = () => { this.state.accessory = opt.id; this.updateAvatarPreview(); this.renderStep(); };
+                            grid.appendChild(card);
+                        });
+                        break;
+                    case 'ready':
+                        grid.className = 'flex flex-col items-center justify-center p-6 text-center';
+                        grid.innerHTML = `<div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6 max-w-md w-full shadow-lg"><i class="fa-solid fa-circle-check text-5xl text-emerald-500 mb-3 animate-bounce"></i><h4 class="text-2xl font-bold text-blue-950 mb-2">Tasarımın Harika Oldu!</h4><p class="text-slate-600 text-sm font-medium mb-6">Kendi tasarladığın karakterinle Harezmi'ye mesaj göndermeye hazırsın!</p><button onclick="app.openChatStage()" class="btn-gold text-lg px-8 py-3.5 rounded-2xl font-extrabold flex items-center justify-center space-x-3 w-full cursor-pointer pulse-glow"><span>HAREZMİ İLE KONUŞ</span><i class="fa-solid fa-comments text-2xl"></i></button></div>`;
+                        break;
+                }
+
+                const btnPrev = document.getElementById('btn-prev');
+                const btnNextText = document.getElementById('btn-next-text');
+                const btnNextIcon = document.getElementById('btn-next-icon');
+                btnPrev.disabled = this.currentStepIndex === 0;
+                if (this.currentStepIndex === this.steps.length - 1) {
+                    btnNextText.textContent = 'Harezmi ile Konuş';
+                    btnNextIcon.className = 'fa-solid fa-comments';
+                } else {
+                    btnNextText.textContent = 'Sonraki Adım';
+                    btnNextIcon.className = 'fa-solid fa-chevron-right';
+                }
+            }
+
+            createOptionCard(title, contentHTML, isSelected) {
+                const div = document.createElement('div');
+                div.className = `glass-card p-4 rounded-2xl text-center cursor-pointer flex flex-col items-center justify-center ${isSelected ? 'selected' : ''}`;
+                div.innerHTML = `${contentHTML}<span class="font-bold text-slate-800 text-sm mt-1">${title}</span>`;
+                return div;
+            }
+
+            updateAvatarPreview() {
+                document.getElementById('avatar-svg-wrapper').innerHTML = generateAvatarSVG(this.state);
+                document.getElementById('summary-gender').textContent = AVATAR_CONFIG.genders[this.state.gender];
+                const hairList = this.state.gender === 'girl' ? AVATAR_CONFIG.girlHairStyles : AVATAR_CONFIG.boyHairStyles;
+                const hObj = hairList.find(h => h.id === this.state.hairStyle);
+                document.getElementById('summary-hair').textContent = hObj ? hObj.name : '';
+                const hcObj = AVATAR_CONFIG.hairColors.find(h => h.id === this.state.hairColor);
+                document.getElementById('summary-hair-color').textContent = hcObj ? hcObj.name : '';
+                const ecObj = AVATAR_CONFIG.eyeColors.find(e => e.id === this.state.eyeColor);
+                document.getElementById('summary-eye').textContent = ecObj ? ecObj.name : '';
+                const scObj = AVATAR_CONFIG.skinColors.find(s => s.id === this.state.skinColor);
+                document.getElementById('summary-skin').textContent = scObj ? scObj.name : '';
+                const accObj = AVATAR_CONFIG.accessories.find(a => a.id === this.state.accessory);
+                document.getElementById('summary-acc').textContent = accObj ? accObj.name : '';
+                this.playAudio('click');
+            }
+
+            prevStep() { if (this.currentStepIndex > 0) { this.currentStepIndex--; this.renderStep(); } }
+            nextStep() { if (this.currentStepIndex < this.steps.length - 1) { this.currentStepIndex++; this.renderStep(); } else { this.openChatStage(); } }
+
+            randomizeAvatar() {
+                const isGirl = Math.random() > 0.5;
+                this.state.gender = isGirl ? 'girl' : 'boy';
+                const hairList = isGirl ? AVATAR_CONFIG.girlHairStyles : AVATAR_CONFIG.boyHairStyles;
+                this.state.hairStyle = hairList[Math.floor(Math.random() * hairList.length)].id;
+                this.state.hairColor = AVATAR_CONFIG.hairColors[Math.floor(Math.random() * AVATAR_CONFIG.hairColors.length)].id;
+                this.state.eyeColor = AVATAR_CONFIG.eyeColors[Math.floor(Math.random() * AVATAR_CONFIG.eyeColors.length)].id;
+                this.state.skinColor = AVATAR_CONFIG.skinColors[Math.floor(Math.random() * AVATAR_CONFIG.skinColors.length)].id;
+                this.state.accessory = AVATAR_CONFIG.accessories[Math.floor(Math.random() * AVATAR_CONFIG.accessories.length)].id;
+                this.renderStep(); this.updateAvatarPreview();
+            }
+
+            openChatStage() {
+                document.getElementById('stage-wizard').classList.add('hidden');
+                document.getElementById('step-nav-bar').classList.add('hidden');
+                document.getElementById('stage-chat').classList.remove('hidden');
+                document.getElementById('chat-avatar-svg').innerHTML = generateAvatarSVG(this.state);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            setMessage(text) { document.getElementById('student-message').value = text; }
+
+            sendPlaneMessage() {
+                const messageInput = document.getElementById('student-message');
+                const rawMsg = messageInput.value.trim();
+                if (!rawMsg) {
+                    // Show inline warning instead of alert
+                    messageInput.style.borderColor = '#ef4444';
+                    messageInput.placeholder = 'Lütfen bir mesaj yaz!';
+                    setTimeout(() => { messageInput.style.borderColor = ''; messageInput.placeholder = 'Mesajını buraya yaz...'; }, 2000);
+                    return;
+                }
+                this.state.studentMessage = rawMsg;
+                document.getElementById('btn-send-message').disabled = true;
+                messageInput.disabled = true;
+
+                const thread = document.getElementById('chat-thread');
+                const studentBubble = document.createElement('div');
+                studentBubble.className = 'flex items-start justify-end gap-3';
+                studentBubble.innerHTML = `<div class="bg-blue-600 text-white p-3.5 rounded-2xl rounded-tr-none max-w-xl shadow-md"><span class="block text-xs font-semibold text-blue-200 mb-1">Senin Mesajın:</span><p class="text-sm md:text-base font-medium">${this.escapeHtml(rawMsg)}</p></div>`;
+                thread.appendChild(studentBubble);
+                thread.scrollTop = thread.scrollHeight;
+
+                const avatarCard = document.getElementById('avatar-chat-card');
+                const harezmiCard = document.getElementById('harezmi-chat-card');
+                const startRect = avatarCard.getBoundingClientRect();
+                const endRect = harezmiCard.getBoundingClientRect();
+                const startX = startRect.left + startRect.width / 2;
+                const startY = startRect.top + startRect.height / 2;
+                const endX = endRect.left + endRect.width / 2;
+                const endY = endRect.top + endRect.height / 2;
+
+                const flightContainer = document.getElementById('flight-container');
+                const plane = document.createElement('div');
+                plane.className = 'fixed z-50 text-amber-500 transition-all duration-[1400ms] cubic-bezier(0.25, 1, 0.5, 1) flex items-center space-x-1';
+                plane.style.left = `${startX}px`;
+                plane.style.top = `${startY}px`;
+                plane.style.transform = 'translate(-50%, -50%) scale(1) rotate(0deg)';
+                plane.innerHTML = `<i class="fa-solid fa-paper-plane text-4xl drop-shadow-lg text-blue-600"></i><i class="fa-solid fa-envelope text-2xl text-yellow-500 animate-pulse"></i>`;
+                flightContainer.appendChild(plane);
+                this.playAudio('whoosh');
+
+                setTimeout(() => { plane.style.left = `${endX}px`; plane.style.top = `${endY}px`; plane.style.transform = 'translate(-50%, -50%) scale(1.3) rotate(15deg)'; }, 50);
+
+                setTimeout(() => {
+                    flightContainer.innerHTML = '';
+                    this.playAudio('success');
+                    document.getElementById('status-banner').classList.remove('hidden');
+                    document.getElementById('typing-indicator').classList.remove('hidden');
+                    const replyText = this.generateHarezmiReply(rawMsg);
+
+                    setTimeout(() => {
+                        document.getElementById('status-banner').classList.add('hidden');
+                        document.getElementById('typing-indicator').classList.add('hidden');
+                        const harezmiBubble = document.createElement('div');
+                        harezmiBubble.className = 'flex items-start gap-3 animate-fade-in';
+                        const harezmiThumbSrc = document.querySelector('[data-template-id="harezmi-chat-thumb"]')?.src || '';
+                        harezmiBubble.innerHTML = `<img src="${harezmiThumbSrc}" onerror="this.onerror=null; this.src='https://placehold.co/60x60/992b15/ffffff?text=H';" class="w-10 h-10 rounded-full border-2 border-amber-400 object-cover flex-shrink-0 mt-1 shadow-sm"><div class="bg-amber-50 border-2 border-amber-300 text-slate-800 p-4 rounded-2xl rounded-tl-none max-w-xl shadow-md"><span class="block text-xs font-bold text-amber-900 mb-1 flex items-center"><i class="fa-solid fa-scroll text-amber-600 mr-1.5"></i> Harezmi:</span><p class="text-sm md:text-base font-bold text-slate-900 leading-relaxed">${this.escapeHtml(replyText)}</p></div>`;
+                        thread.appendChild(harezmiBubble);
+                        thread.scrollTop = thread.scrollHeight;
+                        document.getElementById('btn-send-message').disabled = false;
+                        messageInput.disabled = false;
+                        messageInput.value = '';
+                    }, 1600);
+                }, 1450);
+            }
+
+            escapeHtml(str) { return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
+
+            generateHarezmiReply(msg) {
+                const lower = msg.toLowerCase('tr-TR');
+                if (lower.includes('merhaba') || lower.includes('selam') || lower.includes('günaydın') || lower.includes('iyi günler')) {
+                    const r = ["Merhaba! Seninle tanıştığıma çok memnun oldum. 🌟","Selam sevgili öğrencim! Hoş geldin, seninle matematik ve kodlama konuşmak harika! ✨","Merhaba! Bilim yolculuğuna katıldığın için seninle gurur duyuyorum! 🚀"];
+                    return r[Math.floor(Math.random() * r.length)];
+                }
+                if (lower.includes('teşekkür') || lower.includes('sağol') || lower.includes('sağ ol') || lower.includes('tesekkur')) {
+                    const r = ["Ben de güzel mesajın için teşekkür ederim. Beni çok mutlu ettin! 😊","Rica ederim sevgili dostum! Öğrenme aşkın daim olsun. 🌟"];
+                    return r[Math.floor(Math.random() * r.length)];
+                }
+                if (lower.includes('algoritma') || lower.includes('kod') || lower.includes('yazılım') || lower.includes('bilgisayar')) {
+                    const r = ["Algoritma, bir problemi çözmek veya bir hedefe ulaşmak için izlenen sıralı adımlardır.","Algoritma tıpkı bir yemek tarifi gibidir! Adım adım takip ettiğinde seni en doğru sonuca ulaştırır. 💡","Benim adım Harezmi, 'Algoritma' kelimesi benim ismimden gelir! Bilgisayarlar da algoritmalar sayesinde çalışır. 💻"];
+                    return r[Math.floor(Math.random() * r.length)];
+                }
+                if (lower.includes('sıfır') || lower.includes('0') || lower.includes('cebir') || lower.includes('matematik')) {
+                    const r = ["Sıfır (0) sayısını ve Cebir bilimini matematiğe kazandıran araştırmalar yaptım! Matematik evrenin gizli dilidir. 📐✨","Sıfır (0) yokluğu temsil eder ama basamak sistemine girdiğinde sayılara büyük güç katar! 🔢"];
+                    return r[Math.floor(Math.random() * r.length)];
+                }
+                if (lower.includes('seviyorum') || lower.includes('harikasın') || lower.includes('mükemmel') || lower.includes('kral') || lower.includes('süper')) {
+                    const r = ["Bu güzel mesajın beni çok mutlu etti! Bilime ve öğrenmeye olan merakını hiç kaybetme. 🚀","Sevgin için çok teşekkür ederim! Sen de harika bir öğrencisin, Bilfen ailesine selamlar! ❤️"];
+                    return r[Math.floor(Math.random() * r.length)];
+                }
+                const g = ["Çok güzel bir soru ya da düşünce! Bilim merakla başlar, merak etmeye ve araştırmaya hep devam et! 🌟","Mesajını aldım ve çok sevindim. Bilfen'deki derslerinde başarılar dilerim, sen geleceğin bilim insanısın! 🚀","Senin gibi pırıl pırıl zeki öğrencilerle iletişim kurmak beni çok gururlandırıyor. Çalışmaya devam et! 💡"];
+                return g[Math.floor(Math.random() * g.length)];
+            }
+
+            resetAll() {
+                const thread = document.getElementById('chat-thread');
+                const harezmiThumbSrc = document.querySelector('[data-template-id="harezmi-chat-thumb"]')?.src || '';
+                thread.innerHTML = `<div class="flex items-start gap-3"><img src="${harezmiThumbSrc}" onerror="this.onerror=null; this.src='https://placehold.co/60x60/992b15/ffffff?text=H';" class="w-10 h-10 rounded-full border-2 border-amber-400 object-cover flex-shrink-0 mt-1 shadow-sm"><div class="bg-amber-50 border-2 border-amber-200 text-slate-800 p-4 rounded-2xl rounded-tl-none max-w-xl shadow-sm"><span class="block text-xs font-bold text-amber-900 mb-1 flex items-center"><i class="fa-solid fa-scroll text-amber-600 mr-1.5"></i> Harezmi:</span><p class="text-sm md:text-base font-semibold leading-relaxed">Merhaba sevgili öğrencim! Ben Harezmi. Tasarladığın harika avatarınla seni gördüğüme çok sevindim! Bana ne sormak istersin?</p></div></div>`;
+                document.getElementById('student-message').value = '';
+                document.getElementById('student-message').disabled = false;
+                document.getElementById('btn-send-message').disabled = false;
+                document.getElementById('stage-chat').classList.add('hidden');
+                document.getElementById('stage-start').classList.remove('hidden');
+            }
+
+            playAudio(type) {
+                try {
+                    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.connect(gain); gain.connect(ctx.destination);
+                    if (type === 'click') {
+                        osc.frequency.setValueAtTime(520, ctx.currentTime);
+                        osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.08);
+                        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+                        gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.08);
+                        osc.start(); osc.stop(ctx.currentTime + 0.08);
+                    } else if (type === 'whoosh') {
+                        osc.type = 'triangle';
+                        osc.frequency.setValueAtTime(200, ctx.currentTime);
+                        osc.frequency.exponentialRampToValueAtTime(600, ctx.currentTime + 0.3);
+                        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                        gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+                        osc.start(); osc.stop(ctx.currentTime + 0.3);
+                    } else if (type === 'success') {
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(523.25, ctx.currentTime);
+                        osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.1);
+                        osc.frequency.setValueAtTime(783.99, ctx.currentTime + 0.2);
+                        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                        gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+                        osc.start(); osc.stop(ctx.currentTime + 0.4);
+                    }
+                } catch (e) {}
+            }
+        }
+
+        let app;
+        window.onload = function() {
+            app = new AvatarApp();
+            app.init();
+        };
+    </script>
+  <script src="https://cj6n7jabrs751xnm.canvacode.com/codelet/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..pnj8N83bMxezInTV.J8EGOWrg2CbLatSZ6JrA1KG8NeyPXHAZ25zw08JiuBU5teX68B40w1NRWXZERIlafixQoP2u954hCKwlctXBPuL71a0gqErN7DUoFV7OxdL2HM91az60KDFXOggECt2JoxE4wCMp_cuPDlt979mjV0q7vvrt2Q2WDM29bKXyluuNpCNCdgwb4qyQEWozpClSLUxRqwhozNRS7sIdVwf4-diV7LOSFMfJ0qaI_45Tn30157ZGL_RsDK0izkiqPzHPZkpsAU1feaXzxcdnRvYmvsU94o17suT3EIR04ibteB7OWcFLLYNzE5PAj_tH68IrzxV8d73yJraXlaWXg3Q141QTe48HRkvIvtH_DRweCuOLehkY0wLC_yQTasqW4RVu1w11fVHEgjZIu8IWE5qjSXrEF3ZyyM0J5TzHwJT2u0E_yov9BqGHa2vAEAvM2EiVRhgLjM2ZWJ69wlsGgQHMtIqbe7Uk10XDslQH0XhPhtdFqukMsubI86T-EDOgPwFxIpVBuaedsIOJJatwlrRVdGLhDK0tu9M0xZcu5LbYU7wUVwrelxeBmLXZv25KX3YiCGfeEUSqUNXPIMjGmbo7fUNh9uPSyPh2nFmn.UcoghW6Xk_A4HFxR8AHchQ/editing_sdk.js?pin_id=f9cf68852de5958ef118b68426dcd68d"></script>
+ 
+</body>
+</html>
